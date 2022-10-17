@@ -4,6 +4,7 @@ export interface ISkill {
     image:      string;
     priority:   number;
     category:   string;
+    knowledge:  number;
 
 }
 

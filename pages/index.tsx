@@ -56,17 +56,17 @@ const Home: NextPage<Props> = ({ projects , skills, softSkills }) => {
 			<article id="work" className="wrapper style2">
 				<SkillsGrid skills={skills} softSkills={ softSkills }/>
 			</article>
-			<ModalOpenLink/>
+			{/* <ModalOpenLink/> */}
 			<div id="yourAppElement"></div>
 			<article id="portfolio" className="wrapper style3">
 				<Projects projects={ projects }/>
+				<ModalOpenLink/>
 			</article>
 
-
+{/* 
 			<article id="work" className="wrapper style2">
 				<Skills skills={skills} softSkills={ softSkills }/>
-			</article>
-			<ModalOpenLink/>
+			</article> */}
 			
 
 		
@@ -106,7 +106,7 @@ const Home: NextPage<Props> = ({ projects , skills, softSkills }) => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	const projects = await Project.find().sort( 'priority' ); 
-	const skills = await Skill.find().sort( 'priority' );
+	const skills = await Skill.find().sort( { priority: 'asc', knowledge: 'desc'} );
 	const softskills = await SoftSkill.find()
 
 	return {

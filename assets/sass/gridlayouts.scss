@@ -36,7 +36,7 @@
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
     gap: 20px;
     grid-template-areas: 
     ".      card1  .      "
@@ -77,6 +77,23 @@
     gap: 3px;
 }
 
+.grid__modal{
+    width: 99%;
+    margin: 0 auto;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: 20px;
+    grid-template-areas: 
+    "card1      card2"
+}
+.grid__modal__item:nth-of-type(1){
+    grid-area: card1;
+}
+.grid__modal__item:nth-of-type(2){
+    grid-area: card2;
+}
 @include breakpoint('<=small') {
     .card__container {
         grid-template-areas: 

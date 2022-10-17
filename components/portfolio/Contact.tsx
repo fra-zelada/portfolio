@@ -1,3 +1,4 @@
+import { Snackbar } from '@mui/material';
 import { FormEvent, FC } from 'react';
 import { useState } from 'react';
 
@@ -15,7 +16,7 @@ const Contact:FC = () => {
 	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
 			
 		event?.preventDefault();
-		console.log(formState)
+		setOpen(true);
 	};
 
 	const INITIAL_STATE:IForm = 
@@ -25,6 +26,7 @@ const Contact:FC = () => {
 			subject	: 	'',
 			message	: 	''
 		}
+		const [open, setOpen] = useState(false);
 	
 	
 	const [formState, setFormState] = useState<IForm>(INITIAL_STATE)
@@ -92,6 +94,15 @@ const Contact:FC = () => {
 								</div>
 							</form>
 						</div>   
+
+						<Snackbar
+							message="Mensaje Enviado!"
+							anchorOrigin={{ vertical: "top", horizontal: "center" }}
+							autoHideDuration={2000}
+							onClose={() => setOpen(false)}
+							open={open}
+						/>
+
         </>
     )
 }

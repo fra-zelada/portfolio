@@ -11,7 +11,10 @@ const Skill:FC<Props> = ({ title, description, image=''}) => {
     return (
         <>
                         <div className="col-4 col-6-medium col-12-small">
-							<section className="box style1">
+							<section 
+								className="box style1" 
+								// style={{ height: '100%'}}
+							>
 								
 								<h3>{ title }</h3>
 								<p> { description } </p>

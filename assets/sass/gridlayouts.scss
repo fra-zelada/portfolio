@@ -101,12 +101,22 @@
             "card2"
             "card3";
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(1,1fr);
+        grid-template-rows: repeat(3,1fr);
         }   
 }
 @include breakpoint('<=medium') {
+    .card__container {
+        grid-template-areas: 
+            "card1"
+            "card2"
+            "card3";
+            
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3,1fr);
+        } 
     .parent {
         display: grid;
+        
         grid-template-columns: repeat(2, 1fr);
         
         grid-column-gap: 0px;
@@ -114,6 +124,14 @@
         }   
 }
 @include breakpoint('<=large') {
+    .card__container {
+        grid-template-areas: 
+            "card1 card1"
+            "card2 card3";
+            
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1,1fr);
+        } 
     .parent {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

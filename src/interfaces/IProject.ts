@@ -1,6 +1,8 @@
+
 export interface IProject {
     title       : string;
     website     : string;
+    image       ?: string;
     gitHubRepo  : string;
     description : string;
     credentials ?: IProjectCredentials[];

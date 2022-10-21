@@ -1,4 +1,4 @@
-import { Chip, Typography } from "@mui/material";
+import { Card, CardMedia, Chip, Typography } from "@mui/material";
 import { height, width } from "@mui/system"
 import { FC } from "react"
 import { ISkill } from "../../src/interfaces/ISkill"
@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LensIcon from '@mui/icons-material/Lens';
+import Grid from "@mui/material/Unstable_Grid2";
 interface Props {
     title  : string; 
     skills : ISkill[]
@@ -37,38 +38,61 @@ const SkillTech2:FC<Props> = ({ skills, title }) => {
 
     return (
         <>
-                        <div  >
+        
+                        <Box sx={{
+                            background: '#fff',
+                            boxShadow: 'inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1)',
+                            padding: 1
+                        }}  >
 							<section className="">
 								<span className="icon featured fa-comments"></span>
 								<h3>{ title }</h3>
-                                <div  className="card__container_techs">
+                            <Box sx={{ flexGrow: 1,
+                            
+                            }}>
+                                <Grid container spacing={1}>
 
                                 {
                                     skills.map( skill => (
                                         
-                                        <div 
+                                        <Grid
+                                            xs={4}
                                             key={skill.name} 
                                             className=""
-                                            style={{border: 'solid 1px black', display:'flex', flexDirection:'column', aspectRatio:'1/1' , width: '130px', height:'130px'  }
+                                            // minWidth={'134px'}
+                                            // maxWidth={'154px'}
+                                            style={{border: 'solid 1px black', display:'flex', flexDirection:'column', aspectRatio:'1/1', alignItems: 'center', justifyContent:'space-between', 
+                                            
+                                                // , width: '130px', height:'130px'  
+                                            }
                                         } 
                                         
                                         > 
-                                            <div style={{ marginTop: '1px'}}>
+                                            {/* <Box style={{ marginTop: '1px'}}>
 
 
-                                            </div>
-                                            {skill.name}  
-                                                <picture>
-                                                    <img src={ skill.image } alt={ skill.name } style={{ aspectRatio:'1/1' , width: '30px', height:'30px' }} />
-                                                </picture>
-                                            <div style={{ marginBottom: '1px'}}>
+                                            </Box> */}
+                                            <Typography>
+                                                {skill.name}  
+
+                                            </Typography>
+                                            <Card sx={{ maxWidth: 40 , display:'flex', justifyContent:'center'}}>
+                                                <CardMedia
+                                                    component="img"
+                                                    width="10px"
+                                                    image={ skill.image }
+                                                    alt={ skill.name }>
+                                                    
+                                                </CardMedia>
+                                            </Card>
+                                            <Box style={{ marginBottom: '1px', display:'flex', flexDirection:'column', alignItems:'flex-end'}}>
                                                 <StyledRating
                                                     name="customized-color"
                                                     defaultValue={ (skill.knowledge * 5)/100 || 0 }
                                                     getLabelText={(value: number) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                                     precision={0.1}
-                                                    icon={<LensIcon fontSize="inherit" />}
-                                                    emptyIcon={<LensIcon fontSize="inherit" />}
+                                                    icon={<LensIcon fontSize="small" />}
+                                                    emptyIcon={<LensIcon fontSize="small" />}
                                                     contentEditable={ false }
                                                     disabled={ true }
                                                     style={{ marginBottom: '0px'}}
@@ -76,18 +100,18 @@ const SkillTech2:FC<Props> = ({ skills, title }) => {
                                                 />
                                                 <Chip label={`Manejo: ${skill.knowledge || 0 }%`} />
                                                 {/* <Typography component="legend" variant="caption" style={{marginTop: '0px'}}>Conocimiento: { skill.knowledge || 0 }%</Typography> */}
-                                            </div>
+                                            </Box>
 
 
-                                        </div>
+                                        </Grid>
                                         
                                     ))
                                 }
-                                </div>
-                                
+                                </Grid>
+                            </Box>
 
 							</section>
-						</div>            
+						</Box>            
         </>
     )
 }

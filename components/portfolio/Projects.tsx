@@ -20,12 +20,14 @@ const Projects:FC<Props> = ({ projects }) => {
 					<div className="row">
 						{
 							projects.map((project) => 
-							(		<Project  
+							(
+								<>
+								<Project  
 										key={ project.gitHubRepo }
 										project={ project }
-										image={"https://res.cloudinary.com/dwvkka6mz/image/upload/v1665513433/teslo_u3hjz7.png"} 
 									/>
-
+									
+								</>
 							))
 						}
 						

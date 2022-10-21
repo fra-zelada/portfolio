@@ -109,8 +109,9 @@ const ModalOpenLink = () => {
                                 readOnly: true,
                             }}
                             size='small'
+                            onClick={() => {navigator.clipboard.writeText( user ); setOpen(true); }}
                         />
-                            <ContentCopyOutlinedIcon  onClick={() => {navigator.clipboard.writeText( user ); setOpen(true); }} />
+                            <ContentCopyOutlinedIcon onClick={() => {navigator.clipboard.writeText( user ); setOpen(true); }} />
                     </div>
                     <div className='grid__modal__item' style={{display:'flex'}}>
                         <TextField
@@ -123,6 +124,7 @@ const ModalOpenLink = () => {
                         }}
                         size='small'
                         className='grid__modal__item'
+                        onClick={() => {navigator.clipboard.writeText( password ); setOpen(true);}}
                         />
                         <ContentCopyOutlinedIcon  onClick={() => {navigator.clipboard.writeText( password ); setOpen(true);}} />
 

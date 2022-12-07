@@ -8,9 +8,9 @@ declare module '@mui/material/styles' {
       lg: true;
       xl: true;
       mobile: true; // adds the `mobile` breakpoint
-      tablet: true;
-      laptop: true;
-      desktop: true;
+      tablet: false;
+      laptop: false;
+      desktop: false;
     }
   }
 export const theme = createTheme({

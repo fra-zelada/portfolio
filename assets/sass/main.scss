@@ -433,6 +433,8 @@
 		&.fit {
 			display: block;
 			width: 100%;
+			-webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
 		}
 
 		&.featured {
@@ -749,29 +751,34 @@
 	.wrapper {
 		background-image: url('images/bg.png');
 		box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-		padding: 8em 0 8em 0;
+		// padding: 2em 0 8em 0;
+		padding: 1em 0 1em 0;
 		text-align: center;
+		min-height: 90vh;
 
 		&.style1 {
 			background-image: none;
-			background-color: #fff;
+			background-color: rgb(255 255 255 / 80%);
 		}
 
 		&.style2 {
 			background-color: #fafafa;
 			text-shadow: 1px 1px 0px #fff;
+			// text-shadow: 1px 1px 0px #fff;
 		}
 
 		&.style3 {
-			background-color: #f4f4f4;
+			background-color: rgb(255 255 255 / 85%);
+
 			text-shadow: 1px 1px 0px #fff;
+			// text-shadow: 1px 1px 0px #fff;
 		}
 
 		&.style4 {
 			background-color: #303030;
 			color: #999;
 			text-shadow: -1px -1px 0px #181818;
-
+			min-height: 95vh;
 			h1, h2, h3, h4, h5, h6 {
 				color: #fff;
 			}
@@ -803,8 +810,8 @@
 		width: 100%;
 		z-index: 10000;
 		cursor: default;
-		height: 3.5em;
-		line-height: 3.5em;
+		height: 3.6em;
+		line-height: 3.6em;
 
 		ul {
 			margin-bottom: 0;

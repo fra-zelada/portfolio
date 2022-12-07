@@ -11,7 +11,7 @@ export const useSendEmail =  () => {
         
     
 
-    const sendMail = async ({ name, email, subject, message }: Props) => {
+    const sendMail = async ({ name, email, subject, message }: Props):Promise<boolean> => {
             
         try {
             await axios.post('/api/email', {
@@ -19,13 +19,13 @@ export const useSendEmail =  () => {
             })
             return true;
         } catch (error) {
-            return false;
             console.log(error)
+            return false;
         }    
     
     };
 
-    return [ sendMail ]
+    return [ sendMail ] 
     
 
 };

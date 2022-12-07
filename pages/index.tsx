@@ -87,7 +87,7 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								Work
+								Skills
 							</Link>
 						</li>
 						<li>
@@ -103,7 +103,7 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								Portfolio
+								Portafolio
 							</Link>
 						</li>
 						<li>
@@ -145,18 +145,20 @@ const Home: NextPage<Props> = ({
 									justifyContent: 'center',
 									// border: 'solid 1px white',
 								}}>
-								<Box sx={{ display: { xs: 'none', md: 'block' } }}>Contact</Box>
+								<Box sx={{ display: { xs: 'none', mobilesm: 'block' } }}>
+									Contact
+								</Box>
 								<Box
 									sx={{
 										visibility: 'hidden',
-										display: { xs: 'block', md: 'none' },
+										display: { xs: 'block', mobilesm: 'none' },
 									}}>
-									.
+									‎
 								</Box>
 
 								<Typography
 									sx={{
-										display: { xs: 'flex', md: 'none' },
+										display: { xs: 'flex', mobilesm: 'none' },
 										alignItems: 'center',
 										justifyContent: 'center',
 										// border: 'solid 1px white',
@@ -167,9 +169,9 @@ const Home: NextPage<Props> = ({
 								<Box
 									sx={{
 										visibility: 'hidden',
-										display: { xs: 'block', md: 'none' },
+										display: { xs: 'block', mobilesm: 'none' },
 									}}>
-									.
+									‎
 								</Box>
 							</Link>
 						</li>

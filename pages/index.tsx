@@ -145,20 +145,20 @@ const Home: NextPage<Props> = ({
 									justifyContent: 'center',
 									// border: 'solid 1px white',
 								}}>
-								<Box sx={{ display: { xs: 'none', mobilesm: 'block' } }}>
+								<Box sx={{ display: { xs: 'none', mobile: 'block' } }}>
 									Contact
 								</Box>
 								<Box
 									sx={{
 										visibility: 'hidden',
-										display: { xs: 'block', mobilesm: 'none' },
+										display: { xs: 'block', mobile: 'none' },
 									}}>
 									‎
 								</Box>
 
 								<Typography
 									sx={{
-										display: { xs: 'flex', mobilesm: 'none' },
+										display: { xs: 'flex', mobile: 'none' },
 										alignItems: 'center',
 										justifyContent: 'center',
 										// border: 'solid 1px white',
@@ -169,7 +169,7 @@ const Home: NextPage<Props> = ({
 								<Box
 									sx={{
 										visibility: 'hidden',
-										display: { xs: 'block', mobilesm: 'none' },
+										display: { xs: 'block', mobile: 'none' },
 									}}>
 									‎
 								</Box>

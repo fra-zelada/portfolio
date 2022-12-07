@@ -21,11 +21,12 @@ import Course from '../src/models/course';
 import { ICourse } from '../src/interfaces/ICourse';
 import Hobbie from '../src/models/hobbies';
 import { IHobbie } from '../src/interfaces/IHobbie';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import SectionBox from '../components/layouts/SectionBox';
 import BuildIcon from '@mui/icons-material/Build';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 interface Props {
 	projects: IProject[];
@@ -54,7 +55,9 @@ const Home: NextPage<Props> = ({
 		<MainLayout>
 			<>
 				<nav id='nav'>
-					<ul className='container'>
+					<ul
+					// className='container'
+					>
 						<li>
 							<Link
 								className='clickable'
@@ -68,7 +71,7 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								Top
+								<Typography variant='inherit'> Inicio</Typography>
 							</Link>
 						</li>
 						<li>
@@ -115,7 +118,12 @@ const Home: NextPage<Props> = ({
 								// onSetActive={(event) => {
 								// 	setScreenPosition({ position: event });
 								// }}
-							>
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									// border: 'solid 1px white',
+								}}>
 								Quien Soy
 							</Link>
 						</li>
@@ -131,8 +139,38 @@ const Home: NextPage<Props> = ({
 								// onSetActive={(event) => {
 								// 	setScreenPosition({ position: event });
 								// }}
-							>
-								Contact
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									// border: 'solid 1px white',
+								}}>
+								<Box sx={{ display: { xs: 'none', md: 'block' } }}>Contact</Box>
+								<Box
+									sx={{
+										visibility: 'hidden',
+										display: { xs: 'block', md: 'none' },
+									}}>
+									.
+								</Box>
+
+								<Typography
+									sx={{
+										display: { xs: 'flex', md: 'none' },
+										alignItems: 'center',
+										justifyContent: 'center',
+										// border: 'solid 1px white',
+									}}
+									variant='inherit'>
+									<ContactMailIcon fontSize='large' />
+								</Typography>
+								<Box
+									sx={{
+										visibility: 'hidden',
+										display: { xs: 'block', md: 'none' },
+									}}>
+									.
+								</Box>
 							</Link>
 						</li>
 					</ul>

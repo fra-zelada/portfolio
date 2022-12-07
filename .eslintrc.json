@@ -27,9 +27,10 @@
     ],
     "rules": {
         "@typescript-eslint/no-unused-vars" : "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "options": {
-            "emitError": true
-          }
+        "@typescript-eslint/explicit-function-return-type": "off"
+        //,
+        // "options": {
+            // "emitError": true
+        //   }
     }
 }

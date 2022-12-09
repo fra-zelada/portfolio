@@ -12,6 +12,10 @@ import { loadFull } from 'tsparticles';
 import type { Container, Engine } from 'tsparticles-engine';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../src/themes/theme';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const particlesInit = useCallback(async (engine: Engine) => {
@@ -31,14 +35,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 	);
 
 	return (
-		<SWRConfig
-			value={{
-				fetcher: async (resource, init) =>
-					await fetch(resource, init).then(async (res) => await res.json()),
-			}}>
-			<CssBaseline />
-			<Provider store={store}>
-				<ThemeProvider theme={theme}>
+		<ThemeProvider theme={theme}>
+			<SWRConfig
+				value={{
+					fetcher: async (resource, init) =>
+						await fetch(resource, init).then(async (res) => await res.json()),
+				}}>
+				<CssBaseline />
+				<Provider store={store}>
 					<Particles
 						id='tsparticles'
 						init={particlesInit}
@@ -50,7 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 							},
 							particles: {
 								number: {
-									value: 80,
+									value: 60,
 									density: {
 										enable: true,
 										value_area: 800,
@@ -165,9 +169,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 						}}
 					/>
 					<Component {...pageProps} />
-				</ThemeProvider>
-			</Provider>
-		</SWRConfig>
+				</Provider>
+			</SWRConfig>
+		</ThemeProvider>
 	);
 }
 

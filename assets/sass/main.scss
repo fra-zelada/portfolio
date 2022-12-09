@@ -4,7 +4,8 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700');
 // @import url('fontawesome-all.min.css');
 
 /*
@@ -119,7 +120,7 @@
 	}
 
 	body, input, textarea, select {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
 		line-height: 1.85em;
 		color: #888;
 		font-weight: 300;
@@ -813,22 +814,29 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 		height: 3.6em;
 		max-height: 3.6em;
 		line-height: 3.6em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		ul {
 			margin-bottom: 0;
 			list-style: none;
 			padding-left: 0;
+			display: flex;
+			justify-content: center;
 		}
 
 		li {
-			display: inline-block;
+		top: 0;
+
 			padding-left: 0;
 		}
 
 		a {
 			@include vendor('transition', 'background-color .2s ease-in-out');
 			position: relative;
-			display: block;
+			display: flex;
+			align-items: center;
 			color: #fff;
 			text-decoration: none;
 			outline: 0;

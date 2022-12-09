@@ -27,6 +27,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import Skills from '../components/portfolio/Skills';
 
 interface Props {
 	projects: IProject[];
@@ -70,8 +71,25 @@ const Home: NextPage<Props> = ({
 								// onSetActive={(event) => {
 								// 	setScreenPosition({ position: event });
 								// }}
-							>
-								<Typography variant='inherit'> Inicio</Typography>
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									// border: 'solid 1px white',
+								}}>
+								<Box
+									sx={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+										minWidth: 45,
+									}}>
+									<Typography sx={{ margin: 0, fontSize: 10 }}>
+										Inicio
+									</Typography>
+									<ContactMailIcon fontSize='small' />
+								</Box>
 							</Link>
 						</li>
 						<li>
@@ -87,7 +105,19 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								Skills
+								<Box
+									sx={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+										minWidth: 45,
+									}}>
+									<Typography sx={{ margin: 0, fontSize: 10 }}>
+										Skills
+									</Typography>
+									<ContactMailIcon fontSize='small' />
+								</Box>
 							</Link>
 						</li>
 						<li>
@@ -103,7 +133,19 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								Portafolio
+								<Box
+									sx={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+										minWidth: 45,
+									}}>
+									<Typography sx={{ margin: 0, fontSize: 10 }}>
+										Portafolio
+									</Typography>
+									<ContactMailIcon fontSize='small' />
+								</Box>
 							</Link>
 						</li>
 						<li>
@@ -124,7 +166,19 @@ const Home: NextPage<Props> = ({
 									justifyContent: 'center',
 									// border: 'solid 1px white',
 								}}>
-								Quien Soy
+								<Box
+									sx={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+										minWidth: 45,
+									}}>
+									<Typography sx={{ margin: 0, fontSize: 10 }}>
+										Perfil
+									</Typography>
+									<ContactMailIcon fontSize='small' />
+								</Box>
 							</Link>
 						</li>
 						<li>
@@ -145,34 +199,49 @@ const Home: NextPage<Props> = ({
 									justifyContent: 'center',
 									// border: 'solid 1px white',
 								}}>
-								<Box sx={{ display: { xs: 'none', mobile: 'block' } }}>
-									Contact
-								</Box>
 								<Box
 									sx={{
-										visibility: 'hidden',
-										display: { xs: 'block', mobile: 'none' },
-									}}>
-									‎
-								</Box>
-
-								<Typography
-									sx={{
-										display: { xs: 'flex', mobile: 'none' },
-										alignItems: 'center',
+										display: 'flex',
+										flexDirection: 'column',
 										justifyContent: 'center',
-										// border: 'solid 1px white',
-									}}
-									variant='inherit'>
-									<ContactMailIcon fontSize='large' />
-								</Typography>
-								<Box
-									sx={{
-										visibility: 'hidden',
-										display: { xs: 'block', mobile: 'none' },
+										alignItems: 'center',
+										minWidth: 45,
 									}}>
-									‎
+									<Typography sx={{ margin: 0, fontSize: 10 }}>
+										Contacto
+									</Typography>
+									<ContactMailIcon fontSize='small' />
 								</Box>
+								{/* <Box>
+									<Box sx={{ display: { xs: 'none', mobile: 'block' } }}>
+										Contact
+									</Box>
+									<Box
+										sx={{
+											visibility: 'hidden',
+											display: { xs: 'block', mobile: 'none' },
+										}}>
+										‎
+									</Box>
+
+									<Typography
+										sx={{
+											display: { xs: 'flex', mobile: 'none' },
+											alignItems: 'center',
+											justifyContent: 'center',
+											// border: 'solid 1px white',
+										}}
+										variant='inherit'>
+										<ContactMailIcon fontSize='large' />
+									</Typography>
+									<Box
+										sx={{
+											visibility: 'hidden',
+											display: { xs: 'block', mobile: 'none' },
+										}}>
+										‎
+									</Box>
+								</Box> */}
 							</Link>
 						</li>
 					</ul>

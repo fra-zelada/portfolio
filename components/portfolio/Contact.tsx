@@ -1,45 +1,36 @@
-import { Snackbar, TextareaAutosize, TextField } from '@mui/material';
-import { FormEvent, FC } from 'react';
-import { useState } from 'react';
+import { Button, Snackbar, TextField } from '@mui/material';
+import { FormEvent, FC, useState } from 'react';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { useSendEmail } from '../../src/hooks/useSendEmail';
 import { useFormik } from 'formik';
-import * as Yup from 'yup'
-import { FormControlUnstyled } from '@mui/base';
+import * as Yup from 'yup';
+import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 interface IForm {
-	name	:	string;
-	email	:	string;
-	subject	:	string;
-	message	:	string;
-
+	name: string;
+	email: string;
+	subject: string;
+	message: string;
 }
 
+const Contact: FC = () => {
+	const INITIAL_STATE: IForm = {
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	};
+	const [open, setOpen] = useState(false);
 
-const Contact:FC = () => {
-
-	
-
-	const INITIAL_STATE:IForm = 
-		{
-			name	:	'',
-			email 	: 	'',
-			subject	: 	'',
-			message	: 	''
-		}
-		const [open, setOpen] = useState(false);
-	
-	
-	const [formState, setFormState] = useState<IForm>(INITIAL_STATE)
+	const [formState, setFormState] = useState<IForm>(INITIAL_STATE);
 
 	const { name, email, message, subject } = formState;
 
-	const [ sendMail ] = useSendEmail();
+	const [sendMail] = useSendEmail();
 
-	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-		
+	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event?.preventDefault();
-		sendMail(formState);
+		await sendMail(formState);
 		setOpen(true);
-		
 	};
 
 	const ContactSchema = Yup.object().shape({
@@ -58,124 +49,134 @@ const Contact:FC = () => {
 		email: Yup.string().email('Invalid email').required('Required'),
 	});
 
-	
 	const formik = useFormik({
-			initialValues: INITIAL_STATE,
-			validationSchema: ContactSchema,
-			onSubmit: async (values) => {
-				if (await sendMail(values))
-				{
-					setOpen(true);
-					resetForm();
-				}
-				else
-				{
-					alert('Dont Sent!')
-				}
-			},
-		});
-		
-	const { handleSubmit , resetForm} = formik;
-		return (
-			<>
-			<div className="col-12">
-				<form method="post" onSubmit={ handleSubmit }>
-					<div className="row">
-						<div className="col-6 col-12-small">
-						<TextField 
-								type="text" 
-								name="name" 
-								id="name" 
+		initialValues: INITIAL_STATE,
+		validationSchema: ContactSchema,
+		onSubmit: async (values) => {
+			if (await sendMail(values)) {
+				setOpen(true);
+				resetForm();
+			} else {
+				alert('Dont Sent!');
+			}
+		},
+	});
+
+	const { handleSubmit, resetForm, submitForm } = formik;
+	return (
+		<>
+			<div className='col-12'>
+				<form method='post' onSubmit={handleSubmit}>
+					<div className='row'>
+						<div className='col-6 col-12-small'>
+							<TextField
+								type='text'
+								name='name'
+								id='name'
 								fullWidth
-								placeholder="Name" 
+								placeholder='Nombre'
 								value={formik.values.name}
 								onChange={formik.handleChange}
 								error={formik.touched.name && Boolean(formik.errors.name)}
 								helperText={formik.touched.name && formik.errors.name}
-								// value={ email } 
+								// value={ email }
 								// onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
-
 							/>
 						</div>
-						<div className="col-6 col-12-small">
-							<TextField 
-								type="text" 
-								name="email" 
-								id="email" 
+						<div className='col-6 col-12-small'>
+							<TextField
+								type='text'
+								name='email'
+								id='email'
 								fullWidth
-								placeholder="Email" 
+								placeholder='Email'
 								value={formik.values.email}
 								onChange={formik.handleChange}
 								error={formik.touched.email && Boolean(formik.errors.email)}
 								helperText={formik.touched.email && formik.errors.email}
-								// value={ email } 
+								// value={ email }
 								// onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
-
 							/>
 						</div>
-						<div className="col-12">
-							<TextField 
-								type="text" 
-								name="subject" 
-								id="subject" 
+						<div className='col-12'>
+							<TextField
+								type='text'
+								name='subject'
+								id='subject'
 								fullWidth
-								placeholder="Subject"  
+								placeholder='Asunto'
 								value={formik.values.subject}
 								onChange={formik.handleChange}
 								error={formik.touched.subject && Boolean(formik.errors.subject)}
 								helperText={formik.touched.subject && formik.errors.subject}
 								// value={ subject }
 								// onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
-
 							/>
 						</div>
-						<div className="col-12">
+						<div className='col-12'>
 							<TextField
 								rows={8}
 								multiline
 								fullWidth
-								name="message" 
-								label="Message"
+								name='message'
+								// label='Message'
 								// variant="standard"
 								// style={{ multilin }}
-								id="message" 
-								// placeholder="Message" 
+								id='message'
+								placeholder='Mensaje'
 								value={formik.values.message}
-								onChange={formik.handleChange}								
+								onChange={formik.handleChange}
 								error={formik.touched.message && Boolean(formik.errors.message)}
 								helperText={formik.touched.message && formik.errors.message}
 								// value={ message }
 								// onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
-								minRows={8}
-							></TextField>
-						
+								minRows={8}></TextField>
 						</div>
-						<div className="col-12">
-							<ul className="actions">
-								<li><input type="submit" value="Send Message" /></li>
-								<li><input 
-										type="reset" 
-										value="Clear Form" 
-										className="alt" 
-										onClick={ () => resetForm }
-									/></li>
+						<div className='col-12'>
+							<ul className='actions'>
+								<li>
+									<Button
+										fullWidth
+										type='submit'
+										// onClick={() => {
+										// 	submitForm();
+										// }}
+										variant='contained'
+										style={{ margin: 1, padding: 20 }}>
+										Enviar <MailOutlineIcon />
+									</Button>
+									{/* <input
+										type='submit'
+										value={`Send Message`${(< />)}}
+									/> */}
+								</li>
+								<li>
+									<Button
+										fullWidth
+										onClick={() => {
+											resetForm();
+										}}
+										variant='text'
+										style={{ margin: 1, padding: 20 }}>
+										Limpiar <CleaningServicesIcon />
+									</Button>
+								</li>
 							</ul>
 						</div>
 					</div>
 				</form>
-			</div>   
+			</div>
 
 			<Snackbar
-				message="Mensaje Enviado!"
-				anchorOrigin={{ vertical: "top", horizontal: "center" }}
+				message='Mensaje Enviado!'
+				anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
 				autoHideDuration={2000}
 				onClose={() => setOpen(false)}
 				open={open}
 			/>
-
-</>
-		);
-	};
+		</>
+	);
+};
 
 //     return (
 //         <>
@@ -183,35 +184,35 @@ const Contact:FC = () => {
 // 							<form method="post" onSubmit={ onSubmit }>
 // 								<div className="row">
 // 									<div className="col-6 col-12-small">
-// 										<TextField 
-// 											type="text" 
-// 											name="name" 
-// 											id="name" 
+// 										<TextField
+// 											type="text"
+// 											name="name"
+// 											id="name"
 // 											fullWidth
-// 											placeholder="Name"  
+// 											placeholder="Name"
 // 											value={ name }
 // 											onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
 // 										/>
 // 									</div>
 // 									<div className="col-6 col-12-small">
-// 										<TextField 
-// 											type="text" 
-// 											name="email" 
-// 											id="email" 
+// 										<TextField
+// 											type="text"
+// 											name="email"
+// 											id="email"
 // 											fullWidth
-// 											placeholder="Email" 
-// 											value={ email } 
+// 											placeholder="Email"
+// 											value={ email }
 // 											onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
 
 // 										/>
 // 									</div>
 // 									<div className="col-12">
-// 										<TextField 
-// 											type="text" 
-// 											name="subject" 
-// 											id="subject" 
+// 										<TextField
+// 											type="text"
+// 											name="subject"
+// 											id="subject"
 // 											fullWidth
-// 											placeholder="Subject"  
+// 											placeholder="Subject"
 // 											value={ subject }
 // 											onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
 
@@ -219,9 +220,9 @@ const Contact:FC = () => {
 // 									</div>
 // 									<div className="col-12">
 // 										<TextareaAutosize
-// 											name="message" 
-// 											id="message" 
-// 											placeholder="Message" 
+// 											name="message"
+// 											id="message"
+// 											placeholder="Message"
 // 											value={ message }
 // 											onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
 // 											minRows={8}
@@ -230,17 +231,17 @@ const Contact:FC = () => {
 // 									<div className="col-12">
 // 										<ul className="actions">
 // 											<li><input type="submit" value="Send Message" /></li>
-// 											<li><input 
-// 													type="reset" 
-// 													value="Clear Form" 
-// 													className="alt" 
+// 											<li><input
+// 													type="reset"
+// 													value="Clear Form"
+// 													className="alt"
 // 													onClick={() => { setFormState(INITIAL_STATE) }}
 // 												/></li>
 // 										</ul>
 // 									</div>
 // 								</div>
 // 							</form>
-// 						</div>   
+// 						</div>
 
 // 						<Snackbar
 // 							message="Mensaje Enviado!"
@@ -254,4 +255,4 @@ const Contact:FC = () => {
 //     )
 // }
 
-export default Contact
+export default Contact;

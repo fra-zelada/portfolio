@@ -1,25 +1,60 @@
-import Image from "next/image"
+import Image from 'next/image';
+import DOMPurify from 'isomorphic-dompurify';
+import { Link } from 'react-scroll';
+import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCircleOutlined';
+import { FC } from 'react';
+import Particles from 'react-tsparticles';
+import { Box } from '@mui/material';
 
+const Profile: FC = () => {
+	const profile =
+		'<header><h1>Hola! Soy <strong>Francisco Zelada</strong>.</h1></header><p>Y este es mi <strong>Portafolio</strong>. Soy un desarrollador Front-End con un enfoque en <strong>React</strong> y <strong>Next.JS</strong>. <br/> Apenas estoy comenzando en este viaje y quiero seguir aprendiendo.</p>';
 
-const Profile = () => {
-    return (
-        <>
-				<div className="container">
-					<div className="row">
-						<div className="col-4 col-5-large col-12-medium">
-							<span className="image fit"><Image src="/images/pic00.jpg" alt="" layout='fill'/></span>
-						</div>
-						<div className="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. Im <strong>Jane Doe</strong>.</h1>
-							</header>
-							<p>And this is <strong>Miniport</strong>, a free, fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp; released under the <a href="http://html5up.net/license">CCA license</a>.</p>
-							<a href="#work" className="button large scrolly">Learn about what I do</a>
-						</div>
+	const purificado = DOMPurify.sanitize(profile);
+	const purificado2 = DOMPurify.sanitize(profile);
+
+	return (
+		<>
+			<div className='container '>
+				<div className='row'>
+					<div className='col-4 col-5-large col-12-medium'>
+						<span className='image fit'>
+							<Image
+								src='/images/pic09.jpg'
+								alt=''
+								layout='responsive'
+								width={400}
+								height={400}
+							/>
+						</span>
 					</div>
-				</div>            
-        </>
-    )
-}
+					<div className='col-8 col-7-large col-12-medium'>
+						{
+							<>
+								{/* <header>
+	<h1>Hola! Soy <strong>Francisco Zelada</strong>.</h1>
+</header>
+<p>Y este es mi <strong>Portafolio</strong>. Soy un desarrollador front-end con un enfoque en <strong>React</strong> y <strong>Next.JS</strong>.
+<br/>
+Apenas estoy comenzando en este viaje y quiero seguir aprendiendo.</p> */}
+								<div dangerouslySetInnerHTML={{ __html: purificado }}></div>
+							</>
+						}
+						<Link
+							to='work'
+							spy={true}
+							smooth={true}
+							offset={-70}
+							duration={500}
+							className='button large scrolly'>
+							Tecnologías que utilizo
+							<ArrowDropDownCircleOutlinedIcon fontSize='large' />
+						</Link>
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
 
-export default Profile
+export default Profile;

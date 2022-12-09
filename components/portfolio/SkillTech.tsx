@@ -33,7 +33,15 @@ const SkillTech:FC<Props> = ({ skills, title }) => {
                                         <div 
                                             key={skill.name} 
                                             className="elementSkill"
-                                            style={{border: 'solid 1px black', display:'flex', flexDirection:'column', width: '100%', height:'100%', margin: '0 0 0 0', aspectRatio:'1/1' }
+                                            style={{border: 'solid 1px black', 
+                                                    display:'flex', 
+                                                    flexDirection:'column', 
+                                                    width: '100%', 
+                                                    height:'100%', 
+                                                    margin: '0 0 0 0', 
+                                                    aspectRatio:'1/1' ,
+                                                    animationName: 'initial'
+                                                }
                                         } 
                                         
                                         > 

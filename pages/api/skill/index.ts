@@ -14,10 +14,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     switch (req.method) {
         case 'GET':
                 return getAllSkills( req, res );
-            break;
         case 'POST':
                 return createSkill( req, res );
-            break;
     
         default:
             break;

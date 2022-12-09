@@ -15,10 +15,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     switch (req.method) {
         case 'GET':
                 return getAllSoftSkills( req, res );
-            break;
         case 'POST':
                 return createSoftSkill( req, res );
-            break;
     
         default:
             break;

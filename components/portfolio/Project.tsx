@@ -50,8 +50,20 @@ const Project: FC<Props> = ({ project }) => {
 	return (
 		<>
 			<div className='col-4 col-6-medium col-12-small' ref={divRef}>
-				<article className='box style2' id={title}>
-					<Card sx={{ maxWidth: 345, minHeight: 360, position: 'relative' }}>
+				<article
+					className='box style2'
+					id={title}
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}>
+					<Card
+						sx={{
+							maxWidth: 345,
+							minHeight: 360,
+							position: 'relative',
+						}}>
 						<CardMedia
 							component='img'
 							alt='green iguana'

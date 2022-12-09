@@ -1,33 +1,34 @@
-import type { GetStaticProps, NextPage } from 'next';
-
-import MainLayout from '../components/layouts/MainLayout';
-import Contact from '../components/portfolio/Contact';
-import Projects from '../components/portfolio/Projects';
-import Profile from '../components/portfolio/Profile';
-import { useState } from 'react';
-import { IProject } from '../src/interfaces/IProject';
-import Project from '../src/models/project';
-import { Skill } from '../src/models';
-import { ISkill, ISoftSkill } from '../src/interfaces/ISkill';
-import SoftSkill from '../src/models/softSkill';
-import SkillsGrid from '../components/portfolio/SkillsGrid';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import Bio from '../components/portfolio/Bio';
-import Job from '../src/models/job';
-// import { Fab, Button } from '@mui/material';
-// import NavigationIcon from '@mui/icons-material/Navigation';
-import { IJob } from '../src/interfaces/IJob';
-import Course from '../src/models/course';
-import { ICourse } from '../src/interfaces/ICourse';
-import Hobbie from '../src/models/hobbies';
-import { IHobbie } from '../src/interfaces/IHobbie';
 import { Box, Typography } from '@mui/material';
-import SectionBox from '../components/layouts/SectionBox';
+import { ICourse } from '../src/interfaces/ICourse';
+import { IHobbie } from '../src/interfaces/IHobbie';
+import { IJob } from '../src/interfaces/IJob';
+import { IProject } from '../src/interfaces/IProject';
+import { ISkill, ISoftSkill } from '../src/interfaces/ISkill';
+import { Link, animateScroll as scroll } from 'react-scroll';
+import { Skill } from '../src/models';
+import { useState } from 'react';
+import Bio from '../components/portfolio/Bio';
 import BuildIcon from '@mui/icons-material/Build';
-import WorkIcon from '@mui/icons-material/Work';
-import SchoolIcon from '@mui/icons-material/School';
+import Contact from '../components/portfolio/Contact';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
-import Skills from '../components/portfolio/Skills';
+import Course from '../src/models/course';
+import FolderOpenOutlinedIcon from '@mui/icons-material/FolderOpenOutlined';
+import Hobbie from '../src/models/hobbies';
+import Job from '../src/models/job';
+import MainLayout from '../components/layouts/MainLayout';
+import Profile from '../components/portfolio/Profile';
+import Project from '../src/models/project';
+import Projects from '../components/portfolio/Projects';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import SchoolIcon from '@mui/icons-material/School';
+import SectionBox from '../components/layouts/SectionBox';
+import SkillsGrid from '../components/portfolio/SkillsGrid';
+import SoftSkill from '../src/models/softSkill';
+import TopNavMenuOption from '../components/ui/TopNavMenuOption';
+import type { GetStaticProps, NextPage } from 'next';
+import WorkIcon from '@mui/icons-material/Work';
+import WorkHistoryOutlinedIcon from '@mui/icons-material/WorkHistoryOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 interface Props {
 	projects: IProject[];
@@ -77,19 +78,12 @@ const Home: NextPage<Props> = ({
 									justifyContent: 'center',
 									// border: 'solid 1px white',
 								}}>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										minWidth: 45,
-									}}>
-									<Typography sx={{ margin: 0, fontSize: 10 }}>
-										Inicio
-									</Typography>
-									<ContactMailIcon fontSize='small' />
-								</Box>
+								<TopNavMenuOption
+									name={'Inicio'}
+									icon={
+										<HomeOutlinedIcon sx={{ fontSize: { sx: 12, md: 35 } }} />
+									}
+								/>
 							</Link>
 						</li>
 						<li>
@@ -105,19 +99,14 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										minWidth: 45,
-									}}>
-									<Typography sx={{ margin: 0, fontSize: 10 }}>
-										Skills
-									</Typography>
-									<ContactMailIcon fontSize='small' />
-								</Box>
+								<TopNavMenuOption
+									name={'Skills'}
+									icon={
+										<PsychologyOutlinedIcon
+											sx={{ fontSize: { sx: 12, md: 35 } }}
+										/>
+									}
+								/>
 							</Link>
 						</li>
 						<li>
@@ -133,19 +122,14 @@ const Home: NextPage<Props> = ({
 								// 	setScreenPosition({ position: event });
 								// }}
 							>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										minWidth: 45,
-									}}>
-									<Typography sx={{ margin: 0, fontSize: 10 }}>
-										Portafolio
-									</Typography>
-									<ContactMailIcon fontSize='small' />
-								</Box>
+								<TopNavMenuOption
+									name={'Portafolio'}
+									icon={
+										<FolderOpenOutlinedIcon
+											sx={{ fontSize: { sx: 12, md: 35 } }}
+										/>
+									}
+								/>
 							</Link>
 						</li>
 						<li>
@@ -160,25 +144,21 @@ const Home: NextPage<Props> = ({
 								// onSetActive={(event) => {
 								// 	setScreenPosition({ position: event });
 								// }}
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									// border: 'solid 1px white',
-								}}>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										minWidth: 45,
-									}}>
-									<Typography sx={{ margin: 0, fontSize: 10 }}>
-										Perfil
-									</Typography>
-									<ContactMailIcon fontSize='small' />
-								</Box>
+								// style={{
+								// 	display: 'flex',
+								// 	alignItems: 'center',
+								// 	justifyContent: 'center',
+
+								// }}
+							>
+								<TopNavMenuOption
+									name={'Perfil'}
+									icon={
+										<WorkHistoryOutlinedIcon
+											sx={{ fontSize: { sx: 12, md: 35 } }}
+										/>
+									}
+								/>
 							</Link>
 						</li>
 						<li>
@@ -193,55 +173,13 @@ const Home: NextPage<Props> = ({
 								// onSetActive={(event) => {
 								// 	setScreenPosition({ position: event });
 								// }}
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									// border: 'solid 1px white',
-								}}>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										minWidth: 45,
-									}}>
-									<Typography sx={{ margin: 0, fontSize: 10 }}>
-										Contacto
-									</Typography>
-									<ContactMailIcon fontSize='small' />
-								</Box>
-								{/* <Box>
-									<Box sx={{ display: { xs: 'none', mobile: 'block' } }}>
-										Contact
-									</Box>
-									<Box
-										sx={{
-											visibility: 'hidden',
-											display: { xs: 'block', mobile: 'none' },
-										}}>
-										‎
-									</Box>
-
-									<Typography
-										sx={{
-											display: { xs: 'flex', mobile: 'none' },
-											alignItems: 'center',
-											justifyContent: 'center',
-											// border: 'solid 1px white',
-										}}
-										variant='inherit'>
-										<ContactMailIcon fontSize='large' />
-									</Typography>
-									<Box
-										sx={{
-											visibility: 'hidden',
-											display: { xs: 'block', mobile: 'none' },
-										}}>
-										‎
-									</Box>
-								</Box> */}
+							>
+								<TopNavMenuOption
+									name={'Contacto'}
+									icon={
+										<ContactMailIcon sx={{ fontSize: { sx: 12, md: 35 } }} />
+									}
+								/>
 							</Link>
 						</li>
 					</ul>

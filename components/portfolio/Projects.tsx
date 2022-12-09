@@ -11,7 +11,9 @@ const Projects: FC<Props> = ({ projects }) => {
 	return (
 		<>
 			<div className='container'>
-				<div className='row'>
+				<div
+					className='row'
+					style={{ display: 'flex', justifyContent: 'space-around' }}>
 					{projects.map((project) => (
 						<>
 							<Project key={project.gitHubRepo} project={project} />

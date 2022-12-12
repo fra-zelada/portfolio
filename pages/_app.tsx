@@ -43,6 +43,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 				}}>
 				<CssBaseline />
 				<Provider store={store}>
+					<Component {...pageProps} />
+
 					<Particles
 						id='tsparticles'
 						init={particlesInit}
@@ -168,7 +170,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 							},
 						}}
 					/>
-					<Component {...pageProps} />
 				</Provider>
 			</SWRConfig>
 		</ThemeProvider>

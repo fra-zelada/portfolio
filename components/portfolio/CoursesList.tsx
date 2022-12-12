@@ -12,6 +12,7 @@ const CoursesList: FC<Props> = ({ courses }) => {
 		<Grid container>
 			{courses.map((course, i) => (
 				<Grid
+					item
 					xs={12}
 					md={4}
 					key={i}

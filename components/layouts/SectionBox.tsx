@@ -66,7 +66,7 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 		} else {
 			setShowTitle(true);
 		}
-		console.log(percentage);
+		// console.log(percentage);
 	}, [percentage]);
 
 	return (

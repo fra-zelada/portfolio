@@ -63,7 +63,7 @@ const Bio: FC<Props> = ({ jobs, courses, hobbies }) => {
 				title={'Pasatiempos'}
 				subtitle={'Algunas de las cosas que me gustan y me entretienen...'}
 				image={
-					'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVTfn2Yyi99t5PvJO4Lq475zUSyTIRdvoc7G7eSy6d7oho4f2CZ7v4N6Uw7n_VmfXalM&usqp=CAU'
+					'https://res.cloudinary.com/dwvkka6mz/image/upload/v1670874498/wwetitle_xdya2g.png'
 				}
 				icon={<ImageIcon />}>
 				<HobbiesList hobbies={hobbies} />

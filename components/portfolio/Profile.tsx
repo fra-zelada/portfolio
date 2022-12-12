@@ -18,7 +18,7 @@ const Profile: FC = () => {
 			<div className='container '>
 				<div className='row'>
 					<div className='col-4 col-5-large col-12-medium'>
-						<span className='image fit'>
+						<span className='image fit fade-in-down'>
 							<Image
 								src='/images/pic09.jpg'
 								alt=''
@@ -28,7 +28,7 @@ const Profile: FC = () => {
 							/>
 						</span>
 					</div>
-					<div className='col-8 col-7-large col-12-medium'>
+					<div className='col-8 col-7-large col-12-medium fade-in-left'>
 						{
 							<>
 								{/* <header>
@@ -46,7 +46,7 @@ Apenas estoy comenzando en este viaje y quiero seguir aprendiendo.</p> */}
 							smooth={true}
 							offset={-70}
 							duration={500}
-							className='button large scrolly'>
+							className='button large scrolly fade-in-down'>
 							Tecnologías que utilizo
 							<ArrowDropDownCircleOutlinedIcon fontSize='large' />
 						</Link>

@@ -2,6 +2,7 @@ import { IProject } from '../../src/interfaces/IProject';
 import Project from './Project';
 import { FC } from 'react';
 import ModalOpenLink from './ModalOpenLink';
+import React from 'react';
 
 interface Props {
 	projects: IProject[];
@@ -14,10 +15,10 @@ const Projects: FC<Props> = ({ projects }) => {
 				<div
 					className='row'
 					style={{ display: 'flex', justifyContent: 'space-around' }}>
-					{projects.map((project) => (
-						<>
-							<Project key={project.gitHubRepo} project={project} />
-						</>
+					{projects.map((project, i) => (
+						<React.Fragment key={`${project.title}-${i}`}>
+							<Project project={project} />
+						</React.Fragment>
 					))}
 				</div>
 				<ModalOpenLink />

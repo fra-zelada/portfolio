@@ -23,6 +23,7 @@ import {
 	Theme,
 	Typography,
 } from '@mui/material';
+import React from 'react';
 
 const ModalOpenLink: FC = () => {
 	const stateModal = useAppSelector((state) => state.ui.isModalVisible);
@@ -89,8 +90,8 @@ const ModalOpenLink: FC = () => {
 				<div>{title}</div>
 
 				<div>
-					{credentials.map(({ title, user, password, description }) => (
-						<>
+					{credentials.map(({ title, user, password, description }, i) => (
+						<React.Fragment key={`${title}-${i}`}>
 							<div>
 								<Accordion>
 									<AccordionSummary
@@ -167,7 +168,7 @@ const ModalOpenLink: FC = () => {
 									</AccordionDetails>
 								</Accordion>
 							</div>
-						</>
+						</React.Fragment>
 					))}
 				</div>
 				<div

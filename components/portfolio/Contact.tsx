@@ -130,7 +130,7 @@ const Contact: FC = () => {
 								helperText={formik.touched.message && formik.errors.message}
 								// value={ message }
 								// onChange={({target}) => { setFormState(prev => ({...prev, [target.name]: target.value})) }}
-								minRows={8}></TextField>
+							></TextField>
 						</div>
 						<div className='col-12'>
 							<ul className='actions'>

@@ -15,6 +15,7 @@ import {
 	Box,
 	Button,
 	capitalize,
+	Grid,
 	IconButton,
 	Modal,
 	Snackbar,
@@ -40,7 +41,7 @@ const ModalOpenLink: FC = () => {
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-		width: 'auto',
+		width: { xs: '90%', md: 'auto' },
 		bgcolor: 'background.paper',
 		border: '2px solid #000',
 		boxShadow: 24,
@@ -101,62 +102,74 @@ const ModalOpenLink: FC = () => {
 										<Typography>{capitalize(title)}</Typography>
 									</AccordionSummary>
 									<AccordionDetails>
-										<div className='grid__modal'>
-											<div
-												className='grid__modal__item'
-												style={{ display: 'flex' }}>
-												<TextField
-													required
-													id='outlined-required'
-													label='Usuario'
-													value={user}
-													InputProps={{
-														readOnly: true,
-													}}
-													size='small'
-													onClick={() => {
-														navigator.clipboard.writeText(user);
-														setOpen(true);
-													}}
-												/>
-												<IconButton>
-													<ContentCopyOutlinedIcon
-														color='action'
+										<Grid container spacing={2}>
+											<Grid
+												item
+												style={{
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+												}}>
+												<Box
+													style={{
+														display: 'flex',
+														alignItems: 'center',
+														justifyContent: 'center',
+													}}>
+													<TextField
+														required
+														id='outlined-required'
+														label='Usuario'
+														value={user}
+														InputProps={{
+															readOnly: true,
+														}}
+														size='small'
 														onClick={() => {
 															navigator.clipboard.writeText(user);
 															setOpen(true);
 														}}
 													/>
-												</IconButton>
-											</div>
-											<div
-												className='grid__modal__item'
-												style={{ display: 'flex' }}>
-												<TextField
-													required
-													id='outlined-required'
-													label='Password'
-													value={password}
-													InputProps={{
-														readOnly: true,
-													}}
-													size='small'
-													className='grid__modal__item'
-													onClick={() => {
-														navigator.clipboard.writeText(password);
-														setOpen(true);
-													}}
-												/>
-												<IconButton>
-													<ContentCopyOutlinedIcon
-														color='action'
+													<IconButton
+														sx={{ display: { xs: 'none', md: 'block' } }}>
+														<ContentCopyOutlinedIcon
+															color='action'
+															onClick={() => {
+																navigator.clipboard.writeText(user);
+																setOpen(true);
+															}}
+														/>
+													</IconButton>
+												</Box>
+											</Grid>
+											<Grid item style={{ display: 'flex' }}>
+												<Box style={{ display: 'flex' }}>
+													<TextField
+														required
+														id='outlined-required'
+														label='Password'
+														value={password}
+														InputProps={{
+															readOnly: true,
+														}}
+														size='small'
 														onClick={() => {
 															navigator.clipboard.writeText(password);
 															setOpen(true);
 														}}
 													/>
-												</IconButton>
-											</div>
+													<IconButton
+														sx={{ display: { xs: 'none', md: 'block' } }}>
+														<ContentCopyOutlinedIcon
+															color='action'
+															onClick={() => {
+																navigator.clipboard.writeText(password);
+																setOpen(true);
+															}}
+														/>
+													</IconButton>
+												</Box>
+											</Grid>
 											<Snackbar
 												message='Copiado al Portapapeles'
 												anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -164,7 +177,7 @@ const ModalOpenLink: FC = () => {
 												onClose={() => setOpen(false)}
 												open={open}
 											/>
-										</div>
+										</Grid>
 									</AccordionDetails>
 								</Accordion>
 							</div>

@@ -8,7 +8,7 @@ import {
 	Typography,
 } from '@mui/material';
 import { FC } from 'react';
-import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
+
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 
 interface Props {

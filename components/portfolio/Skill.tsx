@@ -49,9 +49,12 @@ const Skill: FC<Props> = ({ title, description, image = '' }) => {
 						style={{ marginTop: '25px' }}>
 						{description}
 					</Typography>
-					<p style={{ fontSize: '120px' }}>
+					<Typography
+						sx={{
+							fontSize: { xs: 80, md: 120 },
+						}}>
 						<LaptopMacOutlinedIcon fontSize='inherit' />
-					</p>
+					</Typography>
 				</section>
 			</Box>
 		</>

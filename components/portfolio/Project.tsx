@@ -16,6 +16,7 @@ import {
 	CircularProgress,
 	Typography,
 } from '@mui/material';
+import Image from 'next/image';
 
 interface Props {
 	project: IProject;
@@ -64,12 +65,8 @@ const Project: FC<Props> = ({ project }) => {
 							minHeight: 360,
 							position: 'relative',
 						}}>
-						<CardMedia
-							component='img'
-							alt='green iguana'
-							height='140'
-							image={image}
-						/>
+						<CardMedia component='img' alt={title} height='140' image={image} />
+
 						<CardContent>
 							<Box
 								sx={{

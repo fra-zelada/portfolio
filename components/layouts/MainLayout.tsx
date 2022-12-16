@@ -27,6 +27,9 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 					sizes='16x16'
 					href='/favicon-16x16.png'
 				/>
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1'></meta>
 			</Head>
 			<main>{children}</main>
 		</>

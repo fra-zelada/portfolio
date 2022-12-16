@@ -14,6 +14,7 @@ import { useState, FC } from 'react';
 import { bounce } from 'react-animations';
 import Rating from '@mui/material/Rating';
 import { ISkill } from '../../src/interfaces/ISkill';
+import Image from 'next/image';
 
 interface Props {
 	skill: ISkill;
@@ -67,15 +68,20 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 						component='label'>
 						<Card
 							sx={{
-								maxWidth: 40,
+								width: 40,
+								height: 40,
+								position: 'relative',
 								display: 'flex',
 								justifyContent: 'center',
+								marginBottom: 2,
 							}}>
-							<CardMedia
+							<Image src={image} alt={name} layout='fill' objectFit='contain' />
+
+							{/* <CardMedia
 								component='img'
 								width='10px'
 								image={image}
-								alt={name}></CardMedia>
+								alt={name}></CardMedia> */}
 						</Card>
 					</IconButton>
 				</div>

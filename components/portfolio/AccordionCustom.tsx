@@ -26,8 +26,7 @@ const AccordionCustom: FC<PropsWithChildren<Props>> = ({
 		<Accordion>
 			<AccordionSummary
 				expandIcon={<ExpandMoreIcon />}
-				aria-controls='panel1a-content'
-				id='panel1a-header'>
+				aria-controls='panel1a-content'>
 				<ListItem>
 					<ListItemAvatar>
 						{image.length > 0 ? (

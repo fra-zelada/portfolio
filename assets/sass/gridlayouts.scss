@@ -248,6 +248,53 @@
     }
   }
 
+  .skill_card {
+    // width: 190px;
+    // height: 254px;
+    margin: 0 auto;
+    background-color: #F8FBFE;
+    border-radius: 8px;
+    z-index: 1;
+   }
+   
+   .skill_tools {
+    display: flex;
+    align-items: flex-start;
+    padding: 9px;
+   }
+   
+   .skill_circle {
+    padding: 0 4px;
+   }
+   
+   .skill_box {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+   }
+   
+   .skill_red {
+    position: relative;
+    background-color: #ff605c;
+   }
+   
+   .skill_yellow {
+    position: relative;
+    background-color: #ffbd44;
+   }
+   
+   .skill_green {
+    position: relative;
+
+    background-color: #00ca4e;
+   }
+   .skill_card__content {
+    padding: 20;
+   }
  
 
 //   a:hover {

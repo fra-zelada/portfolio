@@ -20,7 +20,51 @@ interface Props {
 const Skill: FC<Props> = ({ title, description, image = '' }) => {
 	return (
 		<>
-			<Box
+			<Box className='skill_card'>
+				<Box className='skill_tools'>
+					<Box className='skill_circle'>
+						<span className='skill_red skill_box'></span>
+					</Box>
+					<Box className='skill_circle'>
+						<span className='skill_yellow skill_box'></span>
+					</Box>
+					<Box className='skill_circle'>
+						<span className='skill_green skill_box'></span>
+					</Box>
+				</Box>
+
+				<ListItem
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						top: 0,
+					}}>
+					<ListItemAvatar>
+						<Avatar>
+							<CoPresentIcon />
+						</Avatar>
+					</ListItemAvatar>
+					<Typography variant='h4'> {title} </Typography>
+				</ListItem>
+				<Divider />
+
+				<Box className='skill_card__content'>
+					<Typography
+						variant='body2'
+						color='text.secondary'
+						style={{ marginTop: '25px', padding: 2.5 }}>
+						{description}
+					</Typography>
+					<Typography
+						sx={{
+							fontSize: { xs: 80, md: 120 },
+						}}>
+						<LaptopMacOutlinedIcon fontSize='inherit' />
+					</Typography>
+				</Box>
+			</Box>
+			{/* <Box
 				sx={{
 					background: '#fff',
 					boxShadow:
@@ -56,7 +100,7 @@ const Skill: FC<Props> = ({ title, description, image = '' }) => {
 						<LaptopMacOutlinedIcon fontSize='inherit' />
 					</Typography>
 				</section>
-			</Box>
+			</Box> */}
 		</>
 	);
 };

@@ -20,7 +20,7 @@ const Profile: FC = () => {
 					<div className='col-4 col-5-large col-12-medium'>
 						<span className='image fit fade-in-down'>
 							<Image
-								src='/images/pic09.jpg'
+								src={process.env.NEXT_PUBLIC_PROFILE_PIC || ''}
 								alt=''
 								layout='responsive'
 								width={400}

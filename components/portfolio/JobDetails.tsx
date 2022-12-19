@@ -23,6 +23,7 @@ const JobDetails: FC<Props> = ({ jobs }) => {
 									height='100%'
 									image={companyImg}
 									alt={company}
+									loading='lazy'
 								/>
 							</Card>
 							<ListItemText

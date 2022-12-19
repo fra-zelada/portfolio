@@ -65,7 +65,13 @@ const Project: FC<Props> = ({ project }) => {
 							minHeight: 360,
 							position: 'relative',
 						}}>
-						<CardMedia component='img' alt={title} height='140' image={image} />
+						<CardMedia
+							component='img'
+							alt={title}
+							height='140'
+							image={image}
+							loading='lazy'
+						/>
 
 						<CardContent>
 							<Box

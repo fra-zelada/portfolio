@@ -25,7 +25,12 @@ const Course: FC<Props> = ({ course }) => {
 					justifyContent: 'center',
 				}}>
 				<Card sx={{ maxWidth: '180px' }}>
-					<CardMedia component='img' image={image} alt={nameCourse} />
+					<CardMedia
+						component='img'
+						image={image}
+						alt={nameCourse}
+						loading='lazy'
+					/>
 				</Card>
 			</Grid>
 			{/* <Grid item xs={2}> */}

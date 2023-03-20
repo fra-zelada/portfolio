@@ -41,7 +41,7 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 						'inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1)',
 					padding: 1,
 				}}
-				className='skillContainer'>
+				className='skill_card'>
 				<section className='skillContainer'>
 					<ListItem
 						style={{
@@ -71,7 +71,7 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 									// maxWidth={'154px'}
 									// alignContent={'stretch'}
 									style={{
-										border: 'solid 1px lightgray',
+										// border: 'solid 1px lightgray',
 										gap: 1,
 										display: 'flex',
 										flexDirection: 'column',

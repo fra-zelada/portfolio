@@ -143,18 +143,24 @@
 
 .skillBox {
     
-    background-color: #faf7f0;
-    border: 2px solid #000;
-    transition: background-color 2s ease-out;
+    background-color: rgba(250, 247, 240, 0.25);
+
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 3%;
+
+    transition: background-color 0.3s ease-out , color 0.3s ease-out, border 0.3s ease-out;
     place-items: center;
   }
   
   .skillBox:hover {
-    background-color: #CDFCF6;
+    background-color: rgba(205, 252, 246, 0.25);
+    color:#000;
+    border: 1px solid rgba(128, 128, 128, 0.50);
+
   }
 
   .skillContainer {
-    background-color: rgba(249,249,249,10);
+    background-color: #F8FBFE;
   }
 
   a, u {

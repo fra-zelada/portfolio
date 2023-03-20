@@ -1,16 +1,21 @@
-import { Chip, Typography } from "@mui/material";
-import { height, width } from "@mui/system"
-import { FC } from "react"
-import { ISkill } from "../../src/interfaces/ISkill"
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { styled } from '@mui/material/styles';
+import { FC } from 'react';
+import { ISkill } from '../../src/interfaces/ISkill';
 import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import LensIcon from '@mui/icons-material/Lens';
+import Grid from '@mui/material/Unstable_Grid2';
+import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
+import {
+	Avatar,
+	Divider,
+	ListItem,
+	ListItemAvatar,
+	Typography,
+} from '@mui/material';
+import Radium from 'radium';
+import SkillTechCard from './SkillTechCard';
+
 interface Props {
-    title  : string; 
-    skills : ISkill[]
+	title: string;
+	skills: ISkill[];
 }
 // {border: 'solid 1px black', display:'flex', flexDirection:'column', width: '120px', height:'120px', margin: '0 0 0 0' }
 // {
@@ -24,72 +29,68 @@ interface Props {
 //     height:'100%',
 //     aspectRatio: '1/1'
 //   }
-const SkillTech2:FC<Props> = ({ skills, title }) => {
+const SkillTech2: FC<Props> = ({ skills, title }) => {
+	const { StyleRoot } = Radium;
 
-    const StyledRating = styled(Rating)({
-        '& .MuiRating-iconFilled': {
-          color: '#02BB02',
-        },
-        '& .MuiRating-iconHover': {
-          color: '#06F406',
-        },
-      });
+	return (
+		<>
+			<Box
+				sx={{
+					background: '#fff',
+					boxShadow:
+						'inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1)',
+					padding: 1,
+				}}
+				className='skillContainer'>
+				<section className='skillContainer'>
+					<ListItem
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}>
+						<ListItemAvatar>
+							<Avatar>
+								<TerminalOutlinedIcon />
+							</Avatar>
+						</ListItemAvatar>
+						<Typography variant='h4'> {title} </Typography>
+					</ListItem>
+					<Divider />
 
-    return (
-        <>
-                        <div  >
-							<section className="">
-								<span className="icon featured fa-comments"></span>
-								<h3>{ title }</h3>
-                                <div  className="card__container_techs">
+					{/* <h3>{ title }</h3> */}
+					<Box sx={{ flexGrow: 1, marginTop: 2 }}>
+						<Grid container spacing={1} alignContent={''}>
+							{skills.map((skill) => (
+								<Grid
+									xs={4}
+									sm={6}
+									lg={4}
+									className='skillBox'
+									// minWidth={'134px'}
+									// maxWidth={'154px'}
+									// alignContent={'stretch'}
+									style={{
+										border: 'solid 1px lightgray',
+										gap: 1,
+										display: 'flex',
+										flexDirection: 'column',
+										aspectRatio: '1/1',
+										alignItems: 'center',
+										justifyContent: 'space-between',
 
-                                {
-                                    skills.map( skill => (
-                                        
-                                        <div 
-                                            key={skill.name} 
-                                            className=""
-                                            style={{border: 'solid 1px black', display:'flex', flexDirection:'column', aspectRatio:'1/1' , width: '130px', height:'130px'  }
-                                        } 
-                                        
-                                        > 
-                                            <div style={{ marginTop: '1px'}}>
+										// , width: '130px', height:'130px'
+									}}
+									key={skill.name}>
+									<SkillTechCard skill={skill} key={skill.name} />
+								</Grid>
+							))}
+						</Grid>
+					</Box>
+				</section>
+			</Box>
+		</>
+	);
+};
 
-
-                                            </div>
-                                            {skill.name}  
-                                                <picture>
-                                                    <img src={ skill.image } alt={ skill.name } style={{ aspectRatio:'1/1' , width: '30px', height:'30px' }} />
-                                                </picture>
-                                            <div style={{ marginBottom: '1px'}}>
-                                                <StyledRating
-                                                    name="customized-color"
-                                                    defaultValue={ (skill.knowledge * 5)/100 || 0 }
-                                                    getLabelText={(value: number) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                                                    precision={0.1}
-                                                    icon={<LensIcon fontSize="inherit" />}
-                                                    emptyIcon={<LensIcon fontSize="inherit" />}
-                                                    contentEditable={ false }
-                                                    disabled={ true }
-                                                    style={{ marginBottom: '0px'}}
-                                                    
-                                                />
-                                                <Chip label={`Manejo: ${skill.knowledge || 0 }%`} />
-                                                {/* <Typography component="legend" variant="caption" style={{marginTop: '0px'}}>Conocimiento: { skill.knowledge || 0 }%</Typography> */}
-                                            </div>
-
-
-                                        </div>
-                                        
-                                    ))
-                                }
-                                </div>
-                                
-
-							</section>
-						</div>            
-        </>
-    )
-}
-
-export default SkillTech2
+export default SkillTech2;

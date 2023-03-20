@@ -16,6 +16,7 @@ const projectCredentials = new Schema<IProjectCredentials>({
 const projectScrema = new Schema<IProject>({
     title   : { type: String, required: true },
     website : { type: String, required: true },
+    image   : { type: String, required: true },
     gitHubRepo  : { type: String, required: true },
     description : { type: String, required: true },
     credentials : [{ type: projectCredentials }],
@@ -32,7 +33,7 @@ run().catch(err => console.log(err));
 
 async function run() {
     // 4. Connect to MongoDB
-    await connect('mongodb://localhost:27017/portfolio');
+    await connect(process.env.MONGO_CONNECTION || '');
 
 
 

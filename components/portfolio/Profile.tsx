@@ -6,7 +6,7 @@ import { FC } from 'react';
 
 const Profile: FC = () => {
 	const profile =
-		'<header><h1>Hola! Soy <strong>Francisco Zelada</strong>.</h1></header><p>Y este es mi <strong>Portafolio</strong>. Soy un desarrollador Front-End con un enfoque en <strong>React</strong> y <strong>Next.JS</strong>. <br/> Apenas estoy comenzando en este viaje y quiero seguir aprendiendo.</p>';
+		'<header><h1>Hola! Soy <strong>Francisco Zelada</strong>.</h1></header><p><strong>Desarrollador Front-End</strong> enfocado en <strong>React</strong> y <strong>Next.JS.</strong> En mi portafolio podrás conocer algunos de mis proyectos, las tecnologías que utilizo, y más información sobre mi. ¡Gracias por visitar!</p>';
 
 	const purificado = DOMPurify.sanitize(profile);
 
@@ -39,8 +39,18 @@ const Profile: FC = () => {
 							offset={-70}
 							duration={500}
 							className='button large scrolly fade-in-down'>
-							Tecnologías que utilizo
-							<ArrowDropDownCircleOutlinedIcon fontSize='large' />
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+								}}>
+								Tecnologías que utilizo
+								<ArrowDropDownCircleOutlinedIcon
+									style={{ marginLeft: 3 }}
+									fontSize='large'
+								/>
+							</div>
 						</Link>
 					</div>
 				</div>

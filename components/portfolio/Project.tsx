@@ -16,7 +16,6 @@ import {
 	CircularProgress,
 	Typography,
 } from '@mui/material';
-import Image from 'next/image';
 
 interface Props {
 	project: IProject;
@@ -41,7 +40,9 @@ const Project: FC<Props> = ({ project }) => {
 	useEffect(() => {
 		const data = async () => {
 			setloadingWeb(true);
-			const data = await fetch(website);
+			try {
+				const data = await fetch(website);
+			} catch (error) {}
 			setloadingWeb(false);
 		};
 

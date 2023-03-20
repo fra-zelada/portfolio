@@ -5,8 +5,7 @@ import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCi
 import { FC } from 'react';
 
 const Profile: FC = () => {
-	const profile =
-		'<header><h1>Hola! Soy <strong>Francisco Zelada</strong>.</h1></header><p><strong>Desarrollador Front-End</strong> enfocado en <strong>React</strong> y <strong>Next.JS.</strong> En mi portafolio podrás conocer algunos de mis proyectos, las tecnologías que utilizo, y más información sobre mi. ¡Gracias por visitar!</p>';
+	const profile = process.env.NEXT_PUBLIC_PROFILE_MESSAGE || '';
 
 	const purificado = DOMPurify.sanitize(profile);
 

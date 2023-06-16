@@ -19,6 +19,8 @@ export const ProfileSkillItem: FC<Props> = ({ img }) => {
 			}}>
 			<img
 				style={{ maxHeight: '65px', maxWidth: '65px' }}
+				height={'65px'}
+				width={'65px'}
 				src={img}
 				alt='skill'
 			/>

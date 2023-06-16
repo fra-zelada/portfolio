@@ -4,8 +4,11 @@ import { Link } from 'react-scroll';
 import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCircleOutlined';
 import { FC } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Card } from '@mui/material';
+import { Box, Card, Typography } from '@mui/material';
 import { ProfileSkillItem } from './ProfileSkillItem';
+import { ProfileGithubButton } from './ProfileGithubButton';
+import { ProfileSkillsContainer } from './ProfileSkillsContainer';
+import { ProfileNavButtons } from './ProfileNavButtons';
 
 const Profile: FC = () => {
 	const profile = process.env.NEXT_PUBLIC_PROFILE_MESSAGE || '';
@@ -15,8 +18,22 @@ const Profile: FC = () => {
 	return (
 		<>
 			<div className='container '>
-				<div className='row'>
-					<div className='col-4 col-5-large col-12-medium'>
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: { xs: 'column', lg: 'row' },
+						justifyContent: 'center',
+						alignItems: 'center',
+						gap: 9,
+					}}>
+					<Box
+						sx={{
+							display: { xs: 'none', lg: 'flex' },
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: 5,
+						}}>
 						<span className='image fit fade-in-down'>
 							<Image
 								src={process.env.NEXT_PUBLIC_PROFILE_PIC || ''}
@@ -27,172 +44,103 @@ const Profile: FC = () => {
 								priority={true}
 							/>
 						</span>
-					</div>
-					<div className='col-8 col-7-large col-12-medium fade-in-left'>
-						{
-							<>
-								{/* <div dangerouslySetInnerHTML={{ __html: purificado }}> */}
-								<div>
-									<Box sx={{ marginBottom: 2, fontSize: '60px' }}>
-										<strong>Francisco Zelada</strong>
+						<ProfileGithubButton />
+					</Box>
+
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: { xs: 'center', lg: 'flex-start' },
+						}}>
+						<Box>
+							<Box
+								sx={{
+									marginBottom: 0,
+									fontSize: { xs: '30px', md: '45px', whiteSpace: 'nowrap' },
+									textAlign: { xs: 'center', md: 'left' },
+									display: 'flex',
+									flexDirection: 'row',
+									justifyContent: 'flex-start',
+									alignItems: 'center',
+								}}>
+								<Box sx={{ display: { xs: 'flex', lg: 'none' } }}>
+									<picture>
+										<img
+											src={process.env.NEXT_PUBLIC_PROFILE_PIC}
+											alt='profile'
+											width={'100px'}
+											height={'100px'}
+										/>
+									</picture>
+								</Box>
+								<Typography sx={{ fontWeight: 'bold', marginLeft: 0 }}>
+									Francisco Zelada
+								</Typography>
+							</Box>
+							<Box
+								sx={{
+									display: 'flex',
+									flexDirection: { xs: 'column', md: 'row' },
+									justifyContent: 'center',
+									alignItems: 'center',
+									marginTop: -2,
+								}}>
+								<Box>
+									<Box
+										sx={{
+											marginBottom: 0,
+											fontSize: {
+												xs: '15px',
+												whiteSpace: 'nowrap',
+											},
+										}}>
+										<Typography sx={{ fontWeight: 'bold' }}>
+											Front-End Developer
+										</Typography>
 									</Box>
-									<Grid container>
-										<Grid xs={4}>
-											<Box sx={{ marginBottom: 0, fontSize: '25px' }}>
-												<strong>Front-End Developer</strong>
-											</Box>
-											<Box sx={{ marginBottom: 1, fontSize: '15px' }}>
-												<strong>🎓Ingeniero en informática</strong>
-											</Box>
-										</Grid>
-										<Grid
-											xs={8}
-											sx={{
-												display: 'flex',
-												flexDirection: 'row',
-												justifyContent: 'left',
-												alignItems: 'center',
-											}}>
-											{/* React Card */}
-
-											<ProfileSkillItem
-												img={
-													'https://res.cloudinary.com/dwvkka6mz/image/upload/v1667418362/icons/png-transparent-react-react-native-logos-brands-in-colors-icon-thumbnail_fyuxk5.png'
-												}
-											/>
-											{/* NExt js card */}
-
-											<ProfileSkillItem
-												img={
-													'https://res.cloudinary.com/dwvkka6mz/image/upload/v1667418361/icons/next-js-logo-8FCFF51DD2-seeklogo.com-removebg-preview_qikixv.png'
-												}
-											/>
-											{/* Typescript card */}
-
-											<ProfileSkillItem
-												img={
-													'https://res.cloudinary.com/dwvkka6mz/image/upload/v1667418362/icons/Typescript_logo_2020.svg_iaz2qe.png'
-												}
-											/>
-											<Box
-												sx={{
-													visibility: { xs: 'hidden', md: 'visible' },
-													display: 'flex',
-													flexDirection: 'row',
-													justifyContent: 'center',
-													alignItems: 'center',
-												}}>
-												{/* Mongo card */}
-
-												<ProfileSkillItem
-													img={
-														'https://res.cloudinary.com/dwvkka6mz/image/upload/v1667418361/icons/MongoDB-Emblem-removebg-preview_t2oqyo.png'
-													}
-												/>
-
-												{/* Oracle card */}
-
-												<ProfileSkillItem
-													img={
-														'https://res.cloudinary.com/dwvkka6mz/image/upload/v1671209044/icons/oracle-removebg-preview_eagjfe.png'
-													}
-												/>
-											</Box>
-										</Grid>
-									</Grid>
-								</div>
-								{/* </div> */}
-							</>
-						}
-						<Grid container spacing={2} sx={{ marginTop: 4 }}>
-							<Grid xs={12} lg={6}>
-								<Link
-									className='custom-button'
-									to='portfolio'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									<span className=''>PROYECTOS</span>
-								</Link>
-							</Grid>
-							<Grid xs={12} lg={6}>
-								<Link
-									className='custom-button'
-									to='work'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									<span className=''>TECNOLOGÍAS</span>
-								</Link>
-							</Grid>
-							<Grid xs={12} lg={6}>
-								<Link
-									className='custom-button'
-									to='bio'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									<span className=''>EXPERIENCIA</span>
-								</Link>
-							</Grid>
-							<Grid xs={12} lg={6}>
-								<Link
-									className='custom-button'
-									to='contact'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									<span className=''>CONTACTO</span>
-								</Link>
-							</Grid>
-						</Grid>
-
-						{/* <Link
-							to='work'
-							spy={true}
-							smooth={true}
-							offset={-70}
-							duration={500}
-							className='custom-button'>
-							<div
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-								}}>
-								Tecnologías que utilizo
-								<ArrowDropDownCircleOutlinedIcon
-									style={{ marginLeft: 3 }}
-									fontSize='large'
-								/>
-							</div>
-						</Link> */}
-						{/* <Link
-							to='work'
-							spy={true}
-							smooth={true}
-							offset={-70}
-							duration={500}
-							className='button large scrolly fade-in-down'>
-							<div
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-								}}>
-								Tecnologías que utilizo
-								<ArrowDropDownCircleOutlinedIcon
-									style={{ marginLeft: 3 }}
-									fontSize='large'
-								/>
-							</div>
-						</Link> */}
-					</div>
-				</div>
+									<Box
+										sx={{
+											marginBottom: 0,
+											fontSize: {
+												xs: '10px',
+												whiteSpace: 'nowrap',
+											},
+										}}>
+										<Typography sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
+											🎓Ingeniero en informática
+										</Typography>
+									</Box>
+								</Box>
+								{/* Profile Skills */}
+								<Box
+									sx={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+										marginTop: 1,
+									}}>
+									<ProfileSkillsContainer />
+								</Box>
+							</Box>
+						</Box>
+						{/* Profile Nav Buttons */}
+						<Box
+							sx={{
+								maxWidth: { xs: '338px', lg: '100%' },
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'center',
+								alignItems: 'center',
+								padding: { xs: 1, lg: 2 },
+								marginTop: -1,
+							}}>
+							<ProfileNavButtons />
+						</Box>
+					</Box>
+				</Box>
 			</div>
 		</>
 	);

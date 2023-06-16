@@ -37,17 +37,17 @@ const Project: FC<Props> = ({ project }) => {
 		dispatch(showModal());
 	};
 
-	useEffect(() => {
-		const data = async () => {
-			setloadingWeb(true);
-			try {
-				const data = await fetch(website);
-			} catch (error) {}
-			setloadingWeb(false);
-		};
+	// useEffect(() => {
+	// 	const data = async () => {
+	// 		setloadingWeb(true);
+	// 		try {
+	// 			const data = await fetch(website);
+	// 		} catch (error) {}
+	// 		setloadingWeb(false);
+	// 	};
 
-		void data();
-	}, []);
+	// 	void data();
+	// }, []);
 
 	return (
 		<>

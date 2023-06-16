@@ -2,11 +2,10 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	background: linear-gradient(to bottom, transparent, #000f29) #210033;
-	background-attachment: fixed;
-	color: white;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	background: linear-gradient(to bottom, transparent, #000f29) #210033 !important;
+	background-attachment: fixed !important;
+	color: white !important;
 }
 
 a {

@@ -97,8 +97,8 @@ const Project: FC<Props> = ({ project }) => {
 								{(credentials?.length ?? 0) > 0 ? (
 									<Chip
 										label={`Visitar`}
-										sx={{ color: 'white' }}
-										icon={<LaunchIcon />}
+										sx={{ color: 'white', fontWeight: 'bold' }}
+										icon={<LaunchIcon sx={{ fill: 'white' }} />}
 										component='a'
 										onClick={openLink}
 										variant='outlined'
@@ -107,8 +107,8 @@ const Project: FC<Props> = ({ project }) => {
 								) : (
 									<Chip
 										label={`Visitar`}
-										sx={{ color: 'white' }}
-										icon={<LaunchIcon />}
+										sx={{ color: 'white', fontWeight: 'bold' }}
+										icon={<LaunchIcon sx={{ fill: 'white' }} />}
 										component='a'
 										href={website}
 										target='_blank'
@@ -119,8 +119,8 @@ const Project: FC<Props> = ({ project }) => {
 
 								<Chip
 									label='Github'
-									sx={{ color: 'white' }}
-									icon={<GitHubIcon />}
+									sx={{ color: 'white', fontWeight: 'bold' }}
+									icon={<GitHubIcon sx={{ fill: 'white' }} />}
 									component='a'
 									href={gitHubRepo}
 									target='_blank'

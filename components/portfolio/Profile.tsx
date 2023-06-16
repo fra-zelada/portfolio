@@ -25,7 +25,8 @@ const Profile: FC = () => {
 						justifyContent: 'center',
 						alignItems: 'center',
 						gap: 9,
-					}}>
+					}}
+					className=''>
 					<Box
 						sx={{
 							display: { xs: 'none', lg: 'flex' },
@@ -34,7 +35,7 @@ const Profile: FC = () => {
 							alignItems: 'center',
 							gap: 5,
 						}}>
-						<span className='image fit fade-in-down'>
+						<span className='image fit fade-in-down '>
 							<Image
 								src={process.env.NEXT_PUBLIC_PROFILE_PIC || ''}
 								alt=''
@@ -121,7 +122,8 @@ const Profile: FC = () => {
 										justifyContent: 'center',
 										alignItems: 'center',
 										marginTop: 1,
-									}}>
+									}}
+									className='fade-in-down'>
 									<ProfileSkillsContainer />
 								</Box>
 							</Box>

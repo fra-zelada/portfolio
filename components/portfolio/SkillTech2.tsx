@@ -50,8 +50,8 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 							alignItems: 'center',
 						}}>
 						<ListItemAvatar>
-							<Avatar>
-								<TerminalOutlinedIcon />
+							<Avatar sx={{ background: 'black' }}>
+								<TerminalOutlinedIcon sx={{ background: 'black' }} />
 							</Avatar>
 						</ListItemAvatar>
 						<Typography variant='h4'> {title} </Typography>
@@ -59,13 +59,13 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 					<Divider />
 
 					{/* <h3>{ title }</h3> */}
-					<Box sx={{ flexGrow: 1, marginTop: 2 }}>
+					<Box sx={{ flexGrow: 1, marginTop: 2, padding: 1 }}>
 						<Grid container spacing={1} alignContent={''}>
 							{skills.map((skill) => (
 								<Grid
-									xs={4}
-									sm={6}
-									lg={4}
+									xs={3}
+									sm={4}
+									lg={3}
 									className='skillBox'
 									// minWidth={'134px'}
 									// maxWidth={'154px'}

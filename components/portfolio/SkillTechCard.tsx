@@ -45,10 +45,7 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 			style={{
 				display: 'flex',
 				flexDirection: 'column',
-				minHeight: 145,
-				// border: 'solid 1px black',
-				// height: '100%',
-				// alignItems: 'center',
+				// minHeight: 60,
 			}}>
 			{/* <Box style={{ marginTop: '1px'}}>
 
@@ -68,8 +65,8 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 						component='label'>
 						<Card
 							sx={{
-								width: 40,
-								height: 40,
+								width: 65,
+								height: 65,
 								position: 'relative',
 								display: 'flex',
 								justifyContent: 'center',
@@ -87,15 +84,7 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 					</IconButton>
 				</div>
 			</Box>
-			<Box
-				style={{ marginTop: 'auto' }}
-				// style={{
-				// 	marginBottom: '1px',
-				// 	display: 'flex',
-				// 	flexDirection: 'column',
-				// 	alignItems: 'flex-end',
-				// }}
-			>
+			{/* <Box style={{ marginTop: 'auto' }}>
 				<StyledRating
 					name='customized-color'
 					defaultValue={(knowledge * 5) / 100 || 0}
@@ -114,8 +103,7 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 					size='small'
 					sx={{ color: 'white', fontWeight: 'bold', background: '#210033' }}
 				/>
-				{/* <Typography component="legend" variant="caption" style={{marginTop: '0px'}}>Conocimiento: { knowledge || 0 }%</Typography> */}
-			</Box>
+			</Box> */}
 		</Box>
 	);
 };

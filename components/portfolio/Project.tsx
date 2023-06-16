@@ -65,6 +65,8 @@ const Project: FC<Props> = ({ project }) => {
 							maxWidth: 345,
 							minHeight: 360,
 							position: 'relative',
+							background: '#0000004d',
+							color: 'white',
 						}}>
 						<CardMedia
 							component='img'
@@ -78,8 +80,13 @@ const Project: FC<Props> = ({ project }) => {
 							<Box
 								sx={{
 									marginBottom: 5,
+									color: 'white',
 								}}>
-								<Typography gutterBottom variant='h5' component='div'>
+								<Typography
+									gutterBottom
+									variant='h5'
+									component='div'
+									color={'white'}>
 									{title}
 								</Typography>
 								<ReadMore text={description} divRef={divRef} />
@@ -90,6 +97,7 @@ const Project: FC<Props> = ({ project }) => {
 								{(credentials?.length ?? 0) > 0 ? (
 									<Chip
 										label={`Visitar`}
+										sx={{ color: 'white' }}
 										icon={<LaunchIcon />}
 										component='a'
 										onClick={openLink}
@@ -99,6 +107,7 @@ const Project: FC<Props> = ({ project }) => {
 								) : (
 									<Chip
 										label={`Visitar`}
+										sx={{ color: 'white' }}
 										icon={<LaunchIcon />}
 										component='a'
 										href={website}
@@ -110,6 +119,7 @@ const Project: FC<Props> = ({ project }) => {
 
 								<Chip
 									label='Github'
+									sx={{ color: 'white' }}
 									icon={<GitHubIcon />}
 									component='a'
 									href={gitHubRepo}

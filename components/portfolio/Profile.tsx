@@ -19,8 +19,8 @@ const Profile: FC = () => {
 								src={process.env.NEXT_PUBLIC_PROFILE_PIC || ''}
 								alt=''
 								layout='responsive'
-								width={400}
-								height={400}
+								width={500}
+								height={500}
 								priority={true}
 							/>
 						</span>

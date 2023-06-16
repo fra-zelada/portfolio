@@ -52,7 +52,7 @@ const Skill: FC<Props> = ({ title, description, image = '' }) => {
 				<Box className='skill_card__content'>
 					<Typography
 						variant='body2'
-						color='text.secondary'
+						// color='text.secondary'
 						style={{ marginTop: '25px', padding: 2.5 }}>
 						{description}
 					</Typography>

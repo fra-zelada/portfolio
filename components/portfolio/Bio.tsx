@@ -43,7 +43,11 @@ interface Props {
 const Bio: FC<Props> = ({ jobs, courses, hobbies }) => {
 	return (
 		<Box
-			style={{ display: 'flex', flexDirection: 'column' }}
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				// background: 'transparent',
+			}}
 			sx={{ width: { lg: '70%', md: '85%', xs: '95%' } }}
 			// className='container'
 		>

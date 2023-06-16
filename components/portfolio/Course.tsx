@@ -69,7 +69,7 @@ const Course: FC<Props> = ({ course }) => {
 						<Chip
 							target='_blank'
 							label={`Visitar`}
-							icon={<LaunchIcon />}
+							icon={<LaunchIcon sx={{ fill: 'white' }} />}
 							component='a'
 							href={website}
 							variant='outlined'
@@ -77,6 +77,7 @@ const Course: FC<Props> = ({ course }) => {
 							style={{
 								marginTop: 'auto',
 								width: '80%',
+								color: 'white',
 							}}
 						/>
 					)}

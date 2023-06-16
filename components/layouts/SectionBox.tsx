@@ -105,6 +105,7 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 							fontWeight: 'bold',
 							stroke: 'black',
 							strokeWidth: '2',
+							color: '#ffffff',
 							// fontFamily: 'georgia',
 						}}>
 						{icon}

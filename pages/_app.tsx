@@ -6,10 +6,10 @@ import { Provider } from 'react-redux';
 import store from '../src/store/store';
 import { SWRConfig } from 'swr';
 import { CssBaseline } from '@mui/material';
-import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Container, Engine } from 'tsparticles-engine';
+// import { useCallback } from 'react';
+//
+// import { loadFull } from 'tsparticles';
+// import type { Container, Engine } from 'tsparticles-engine';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../src/themes/theme';
 import '@fontsource/roboto/300.css';
@@ -18,21 +18,21 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const particlesInit = useCallback(async (engine: Engine) => {
-		// console.log(engine);
+	// const particlesInit = useCallback(async (engine: Engine) => {
+	// 	// console.log(engine);
 
-		// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-		// starting from v2 you can add only the features you need reducing the bundle size
-		await loadFull(engine);
-	}, []);
+	// 	// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+	// 	// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+	// 	// starting from v2 you can add only the features you need reducing the bundle size
+	// 	await loadFull(engine);
+	// }, []);
 
-	const particlesLoaded = useCallback(
-		async (container: Container | undefined) => {
-			// await console.log(container);
-		},
-		[]
-	);
+	// const particlesLoaded = useCallback(
+	// 	async (container: Container | undefined) => {
+	// 		// await console.log(container);
+	// 	},
+	// 	[]
+	// );
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<Provider store={store}>
 					<Component {...pageProps} />
 
-					<Particles
+					{/* <Particles
 						id='tsparticles'
 						init={particlesInit}
 						loaded={particlesLoaded}
@@ -169,7 +169,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 								size: 'cover',
 							},
 						}}
-					/>
+					/> */}
 				</Provider>
 			</SWRConfig>
 		</ThemeProvider>

@@ -58,7 +58,7 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 				style={{
 					margin: 0,
 				}}>
-				<Typography>{name}</Typography>
+				<Typography sx={{ fontWeight: 'bold' }}>{name}</Typography>
 
 				<div className={animate ? 'flip' : ''}>
 					<IconButton
@@ -74,6 +74,7 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 								display: 'flex',
 								justifyContent: 'center',
 								marginBottom: 2,
+								background: '#ffffff4d',
 							}}>
 							<Image src={image} alt={name} layout='fill' objectFit='contain' />
 
@@ -108,7 +109,11 @@ const SkillTechCard: FC<Props> = ({ skill }) => {
 					disabled={true}
 					style={{ marginBottom: '0px' }}
 				/>
-				<Chip label={`Manejo: ${knowledge || 0}%`} size='small' />
+				<Chip
+					label={`Manejo: ${knowledge || 0}%`}
+					size='small'
+					sx={{ color: 'white', fontWeight: 'bold', background: '#210033' }}
+				/>
 				{/* <Typography component="legend" variant="caption" style={{marginTop: '0px'}}>Conocimiento: { knowledge || 0 }%</Typography> */}
 			</Box>
 		</Box>

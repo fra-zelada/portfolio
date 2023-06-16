@@ -122,7 +122,7 @@
 	body, input, textarea, select {
 		font-family: 'Roboto', Helvetica, Arial, sans-serif;
 		line-height: 1.85em;
-		color: #888;
+		color: #fff;
 		font-weight: 300;
 		font-size: 13pt;
 
@@ -144,7 +144,7 @@
 
 	b, strong {
 		font-weight: 600;
-		color: #3e3e3e;
+		color: #fff;
 	}
 
 	i, em {
@@ -170,7 +170,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3e3e3e;
+		color: #fff;
 		margin: 0 0 0.75em 0;
 	}
 
@@ -681,7 +681,7 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 /* Box */
 
 	.box {
-		background: #fff;
+		background: rgb(255, 255, 255, 0.10);
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 		text-align: center;
 		padding: 2em;
@@ -765,8 +765,9 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 		min-height: 90vh;
 
 		&.style1 {
+			
 			background-image: none;
-			background-color: rgb(255 255 255 / 80%);
+			background-color: rgb(255 255 255 /3%);
 		}
 
 		&.style2 {
@@ -776,10 +777,10 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 		}
 
 		&.style3 {
-			background-color: rgb(255 255 255 / 85%);
-
-			text-shadow: 1px 1px 0px #fff;
+			background-color: rgb(255 255 255 /1%);
+			color: white !important;
 			// text-shadow: 1px 1px 0px #fff;
+			
 		}
 
 		&.style4 {

@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({
 	courses,
 	hobbies,
 }: Props) => {
-	const [screenPosition, setScreenPosition] = useState({ position: 'top' });
+	// const [screenPosition, setScreenPosition] = useState({ position: 'top' });
 
 	// useEffect(() => {
 	// 	console.log(screenPosition);

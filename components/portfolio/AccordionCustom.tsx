@@ -23,7 +23,7 @@ const AccordionCustom: FC<PropsWithChildren<Props>> = ({
 	image = '',
 }) => {
 	return (
-		<Accordion>
+		<Accordion sx={{ background: '#ffffff4d', color: 'white' }}>
 			<AccordionSummary
 				expandIcon={<ExpandMoreIcon />}
 				aria-controls='panel1a-content'>
@@ -35,7 +35,11 @@ const AccordionCustom: FC<PropsWithChildren<Props>> = ({
 							<Avatar>{icon}</Avatar>
 						)}
 					</ListItemAvatar>
-					<ListItemText primary={title} secondary={subtitle} />
+					<ListItemText
+						primary={title}
+						secondary={subtitle}
+						sx={{ color: 'white' }}
+					/>
 				</ListItem>
 			</AccordionSummary>
 			<AccordionDetails>{children}</AccordionDetails>

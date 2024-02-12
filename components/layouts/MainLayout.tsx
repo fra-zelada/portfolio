@@ -9,7 +9,7 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
 			<Head>
-				<title>Portfolio</title>
+				<title>Francisco Zelada | Portfolio </title>
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'

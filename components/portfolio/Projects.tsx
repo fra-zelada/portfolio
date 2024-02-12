@@ -13,8 +13,14 @@ const Projects: FC<Props> = ({ projects }) => {
 		<>
 			<div className='container'>
 				<div
-					className='row'
-					style={{ display: 'flex', justifyContent: 'space-around' }}>
+					// className='row'
+					style={{
+						display: 'flex',
+						justifyContent: 'space-around',
+						flexWrap: 'wrap',
+						flexDirection: 'row',
+						alignItems: 'stretch',
+					}}>
 					{projects.map((project, i) => (
 						<React.Fragment key={`${project.title}-${i}`}>
 							<Project project={project} />

@@ -50,90 +50,106 @@ const Project: FC<Props> = ({ project }) => {
 	// }, []);
 
 	return (
-		<>
-			<div className='col-4 col-6-medium col-12-small' ref={divRef}>
-				<article
-					className='box style2'
-					id={title}
+		<Box
+			// className='col-4 col-6-medium col-12-small'
+			style={{
+				flexGrow: 1,
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'stretch',
+			}}
+			sx={{
+				maxWidth: { xs: '100%', md: '50%', lg: '33%' },
+				padding: { md: '2px', lg: '4px' },
+			}}
+			ref={divRef}>
+			<article
+				className='box style2'
+				id={title}
+				style={{
+					display: 'flex',
+					alignItems: 'stretch',
+
+					justifyContent: 'center',
+					flexGrow: 1,
+				}}>
+				<Card
 					style={{
+						flexGrow: 1,
 						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
+						flexDirection: 'column',
+					}}
+					sx={{
+						// maxWidth: { xs: '100%', md: '33%' },
+						position: 'relative',
+						background: '#0000004d',
+						color: 'white',
 					}}>
-					<Card
-						sx={{
-							maxWidth: 345,
-							minHeight: 360,
-							position: 'relative',
-							background: '#0000004d',
-							color: 'white',
-						}}>
-						<CardMedia
-							component='img'
-							alt={title}
-							height='140'
-							image={image}
-							loading='lazy'
-						/>
+					<CardMedia
+						component='img'
+						alt={title}
+						image={image}
+						loading='lazy'
+						style={{ aspectRatio: '16/12', objectFit: 'contain' }}
+					/>
 
-						<CardContent>
-							<Box
-								sx={{
-									marginBottom: 5,
-									color: 'white',
-								}}>
-								<Typography
-									gutterBottom
-									variant='h5'
-									component='div'
-									color={'white'}>
-									{title}
-								</Typography>
-								<ReadMore text={description} divRef={divRef} />
-							</Box>
-						</CardContent>
-						<Box sx={{ bottom: 0, marginTop: 10, position: 'absolute' }}>
-							<CardActions>
-								{(credentials?.length ?? 0) > 0 ? (
-									<Chip
-										label={`Visitar`}
-										sx={{ color: 'white', fontWeight: 'bold' }}
-										icon={<LaunchIcon sx={{ fill: 'white' }} />}
-										component='a'
-										onClick={openLink}
-										variant='outlined'
-										clickable
-									/>
-								) : (
-									<Chip
-										label={`Visitar`}
-										sx={{ color: 'white', fontWeight: 'bold' }}
-										icon={<LaunchIcon sx={{ fill: 'white' }} />}
-										component='a'
-										href={website}
-										target='_blank'
-										variant='outlined'
-										clickable
-									/>
-								)}
-
+					<CardContent>
+						<Box
+							sx={{
+								marginBottom: 5,
+								color: 'white',
+							}}>
+							<Typography
+								gutterBottom
+								variant='h5'
+								component='div'
+								color={'white'}>
+								{title}
+							</Typography>
+							<ReadMore text={description} divRef={divRef} />
+						</Box>
+					</CardContent>
+					<Box sx={{ bottom: 0, marginTop: 10, position: 'absolute' }}>
+						<CardActions>
+							{(credentials?.length ?? 0) > 0 ? (
 								<Chip
-									label='Github'
+									label={`Visitar`}
 									sx={{ color: 'white', fontWeight: 'bold' }}
-									icon={<GitHubIcon sx={{ fill: 'white' }} />}
+									icon={<LaunchIcon sx={{ fill: 'white' }} />}
 									component='a'
-									href={gitHubRepo}
+									onClick={openLink}
+									variant='outlined'
+									clickable
+								/>
+							) : (
+								<Chip
+									label={`Visitar`}
+									sx={{ color: 'white', fontWeight: 'bold' }}
+									icon={<LaunchIcon sx={{ fill: 'white' }} />}
+									component='a'
+									href={website}
 									target='_blank'
 									variant='outlined'
 									clickable
 								/>
-								{loadingWeb && <CircularProgress />}
-							</CardActions>
-						</Box>
-					</Card>
-				</article>
-			</div>
-		</>
+							)}
+
+							<Chip
+								label='Github'
+								sx={{ color: 'white', fontWeight: 'bold' }}
+								icon={<GitHubIcon sx={{ fill: 'white' }} />}
+								component='a'
+								href={gitHubRepo}
+								target='_blank'
+								variant='outlined'
+								clickable
+							/>
+							{loadingWeb && <CircularProgress />}
+						</CardActions>
+					</Box>
+				</Card>
+			</article>
+		</Box>
 	);
 };
 

@@ -24,7 +24,7 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 							sm: 'repeat(2, 1fr)',
 							md: 'repeat(3, 1fr)',
 						},
-						// gridTemplateRows: 'repeat(3, 1fr)',
+
 						gridTemplateRows: 'auto',
 						gap: 1,
 						gridTemplateAreas: {
@@ -51,14 +51,16 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 					<Box
 						sx={{
 							gridArea: 'izquierda',
+							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
 						}}>
-						<SkillTech2 skills={frontSkills} title={'Librerías y más...'} />
+						<SkillTech2 skills={frontSkills} title={'Librerías y más'} />
 					</Box>
 					<Box
 						sx={{
 							gridArea: 'derecha',
+							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
 						}}>
-						<SkillTech2 skills={othersSkills} title={'Herramientas...'} />
+						<SkillTech2 skills={othersSkills} title={'Herramientas'} />
 					</Box>
 				</Box>
 			</div>

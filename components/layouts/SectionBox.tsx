@@ -24,7 +24,7 @@ interface Props {
 	title: string;
 	subtitle: string;
 	sectionName: string;
-	// footerText: string;
+
 	nextSectionName: string;
 	nextSectionButtonLabel: string;
 	prevSectionName: string;
@@ -66,7 +66,6 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 		} else {
 			setShowTitle(true);
 		}
-		// console.log(percentage);
 	}, [percentage]);
 
 	return (
@@ -78,10 +77,8 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 				justifyContent: 'center',
 				alignItems: 'center',
 				flexDirection: 'column',
-				minHeight: '90vh',
-				// border: 'solid 1px black',
+				minHeight: '100vh',
 			}}>
-			{/* Contact */}
 			<Box
 				className='titleBox'
 				style={{
@@ -90,14 +87,12 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 					top: 33,
 					zIndex: 2,
 					background: `${backgroundColor}`,
-
 					backgroundImage: `url(${backgroundImage})`,
 					backgroundPosition: 'center',
 					width: '100%',
 					transition: 'visibility 1s, opacity 1s',
 					visibility: showTitle ? 'visible' : 'hidden',
-					opacity: showTitle ? 0.85 : 0,
-					// marginBottom: '5em',
+					opacity: showTitle ? 1 : 0,
 				}}>
 				<Typography variant='h4' color={'white'}>
 					<Box
@@ -106,7 +101,6 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 							stroke: 'black',
 							strokeWidth: '2',
 							color: '#ffffff',
-							// fontFamily: 'georgia',
 						}}>
 						{icon}
 						{` ${title}`}
@@ -118,17 +112,9 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 					style={{ stroke: 'black', strokeWidth: '10', fontWeight: 'bold' }}>
 					{subtitle}
 				</Typography>
-				{/* <p>Odio turpis amet sed consequat eget posuere consequat.</p> */}
 			</Box>
-			{/* <Box
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					marginTop: '20px',
-				}}> */}
+
 			{children}
-			{/* </Box> */}
 
 			<Box
 				style={{
@@ -141,42 +127,14 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 					display: 'flex',
 					flexDirection: 'row',
 					alignItems: 'center',
-					// alignContent: 'center',
+
 					justifyContent: 'center',
-					// height: 250,
+
 					bottom: 0,
-					//   left: Dimensions.get('window').width - 70,
-					// marginTop: 350,
+
 					zIndex: 3,
-					// border: 'solid 1px black',
 				}}>
-				{/* <p>{footerText}</p> */}
-				{/* <Link
-					to={prevSectionName}
-					spy={true}
-					smooth={true}
-					offset={-70}
-					duration={500}>
-					<Fab variant='extended' color='primary' aria-label='add'>
-						{prevSectionButtonLabel}
-						<ArrowCircleUpTwoToneIcon />
-					</Fab>
-				</Link>
 				<Link
-					to={sectionName}
-					spy={true}
-					smooth={true}
-					offset={-70}
-					duration={500}>
-					<Fab variant='extended' color='primary' aria-label='add'>
-						<PinDropTwoToneIcon />
-					</Fab>
-				</Link> */}
-				<Link
-					// style={{
-					// 	position: 'absolute',
-					// 	bottom: 4,
-					// }}
 					to={nextSectionName}
 					spy={true}
 					smooth={true}
@@ -187,36 +145,7 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 						<ArrowCircleDownTwoToneIcon />
 					</Fab>
 				</Link>
-				{/* <Fab>
-					<Fab variant='extended' color='primary' aria-label='add'>
-						<NavigationIcon sx={{ mr: 1 }} />
-						<Link
-							to={nextSectionName}
-							spy={true}
-							smooth={true}
-							offset={-70}
-							duration={500}>
-							{nextSectionButtonLabel}
-							<ArrowDropDownCircleOutlinedIcon fontSize='large' />
-						</Link>
-					</Fab>
-				</Fab> */}
 			</Box>
-
-			{/* <footer
-				style={{ position: 'sticky', marginTop: 'auto', marginBottom: 60 }}>
-				<p>{footerText}</p>
-				<Link
-					to={nextSectionName}
-					spy={true}
-					smooth={true}
-					offset={-70}
-					duration={500}
-					className='button large scrolly'>
-					{nextSectionButtonLabel}
-					<ArrowDropDownCircleOutlinedIcon fontSize='large' />
-				</Link>
-			</footer> */}
 		</Box>
 	);
 };

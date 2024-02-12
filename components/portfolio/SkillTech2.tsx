@@ -40,6 +40,7 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 					boxShadow:
 						'inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1)',
 					padding: 1,
+					wordWrap: 'break-word',
 				}}
 				className='skill_card'>
 				<section className='skillContainer'>
@@ -48,13 +49,28 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
+							wordWrap: 'break-word',
 						}}>
 						<ListItemAvatar>
 							<Avatar sx={{ background: 'black' }}>
 								<TerminalOutlinedIcon sx={{ background: 'black' }} />
 							</Avatar>
 						</ListItemAvatar>
-						<Typography variant='h4'> {title} </Typography>
+						<Typography
+							align='center'
+							variant='h4'
+							sx={{
+								wordWrap: 'break-word',
+								maxWidth: {
+									xs: '300px',
+									sm: '180px',
+									lg: '300px',
+									xl: '300px',
+								},
+							}}>
+							{' '}
+							{title}{' '}
+						</Typography>
 					</ListItem>
 					<Divider />
 

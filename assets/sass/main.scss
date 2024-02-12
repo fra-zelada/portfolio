@@ -769,7 +769,7 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 			// background-attachment: fixed !important;
 
 			// background: rgba(30, 0, 77, 0.55);
-			backdrop-filter: blur(5px);
+			backdrop-filter: blur(5px) !important;
 		}
 
 		&.style2 {
@@ -782,7 +782,7 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 			background: linear-gradient(to bottom, transparent, rgba(10, 0, 26, 0.85))  rgba(30, 0, 77, 0.55)!important;
 			background-attachment: fixed !important;
 
-			backdrop-filter: blur(8px);
+			backdrop-filter: blur(8px) !important;
 			color: white !important;
 			// text-shadow: 1px 1px 0px #fff;
 

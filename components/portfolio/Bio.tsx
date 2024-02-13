@@ -52,20 +52,20 @@ const Bio: FC<Props> = ({ jobs, courses, hobbies }) => {
 			// className='container'
 		>
 			<AccordionCustom
-				title={'Mi Experiencia Laboral'}
-				subtitle={'Lugares donde me desempeñé y aprendi...'}
+				title={'My Work Experience'}
+				subtitle={'Places where I have worked and learned...'}
 				icon={<WorkHistoryIcon style={{ color: '#248f24' }} />}>
 				<JobDetails jobs={jobs} />
 			</AccordionCustom>
 			<AccordionCustom
-				title={'Formación Académica'}
-				subtitle={'Cursos y estudios profesionales...'}
+				title={'Academic Education'}
+				subtitle={'Courses and Professional Studies...'}
 				icon={<MenuBookIcon style={{ color: '#0077b3' }} />}>
 				<CoursesList courses={courses} />
 			</AccordionCustom>
 			<AccordionCustom
-				title={'Pasatiempos'}
-				subtitle={'Algunas de las cosas que me gustan y me entretienen...'}
+				title={'Hobbies'}
+				subtitle={'Some of the things I like and find entertaining...'}
 				image={
 					'https://res.cloudinary.com/dwvkka6mz/image/upload/v1670874498/wwetitle_xdya2g.png'
 				}

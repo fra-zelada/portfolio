@@ -53,14 +53,14 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 							gridArea: 'izquierda',
 							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
 						}}>
-						<SkillTech2 skills={frontSkills} title={'Librerías y más'} />
+						<SkillTech2 skills={frontSkills} title={'Tech Stack'} />
 					</Box>
 					<Box
 						sx={{
 							gridArea: 'derecha',
 							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
 						}}>
-						<SkillTech2 skills={othersSkills} title={'Herramientas'} />
+						<SkillTech2 skills={othersSkills} title={'Tools'} />
 					</Box>
 				</Box>
 			</div>

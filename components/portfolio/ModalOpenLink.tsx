@@ -196,32 +196,32 @@ const ModalOpenLink: FC = () => {
 						target='_blank'
 						variant='contained'
 						style={{ margin: 1 }}>
-						Visitar <LaunchIcon />
+						Visit <LaunchIcon />
 					</Button>
 					<Button
 						fullWidth
 						onClick={closeModal}
 						variant='contained'
 						style={{ margin: 1 }}>
-						Cerrar
+						Close
 					</Button>
-					{/* <a 
+					{/* <a
                                         href={ website }
                                         target="_blank"
                                         rel='noreferrer'
                                         className=" button "
-                                        style={{  width: '40%' , justifyContent:'flex-start', marginLeft: '10px'}}    
+                                        style={{  width: '40%' , justifyContent:'flex-start', marginLeft: '10px'}}
                                     >
                                             Visitar <LaunchIcon/>
                                     </a>
-                                    <a 
+                                    <a
                                         onClick={ closeModal }
                                         target="_blank"
                                         rel='noreferrer'
                                         className=" button "
-                                        style={{  width: '40%' , justifyContent:'flex-end', marginRight: '10px'}}    
+                                        style={{  width: '40%' , justifyContent:'flex-end', marginRight: '10px'}}
                                         >
-                                            Close 
+                                            Close
                                     </a> */}
 				</div>
 			</Box>

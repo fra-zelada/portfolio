@@ -68,7 +68,7 @@ const Course: FC<Props> = ({ course }) => {
 					{website !== '' && (
 						<Chip
 							target='_blank'
-							label={`Visitar`}
+							label={`Visit`}
 							icon={<LaunchIcon sx={{ fill: 'white' }} />}
 							component='a'
 							href={website}

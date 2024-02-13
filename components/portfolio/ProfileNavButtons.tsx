@@ -23,6 +23,7 @@ export const ProfileNavButtons = () => {
 							justifyItems: 'center',
 							alignItems: 'center',
 							textAlign: 'center',
+							textTransform: 'uppercase',
 						}}>
 						<FolderOpenOutlinedIcon
 							sx={{
@@ -31,7 +32,7 @@ export const ProfileNavButtons = () => {
 								marginRight: 1,
 							}}
 						/>
-						PROYECTOS
+						Portfolio
 					</span>
 				</Link>
 			</Grid>
@@ -43,7 +44,7 @@ export const ProfileNavButtons = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}>
-					<span className=''>
+					<span className='' style={{ textTransform: 'uppercase' }}>
 						<PsychologyOutlinedIcon
 							sx={{
 								width: { xs: '32px', md: '55px' },
@@ -51,7 +52,7 @@ export const ProfileNavButtons = () => {
 								marginRight: 1,
 							}}
 						/>
-						TECNOLOGÍAS
+						Technologies
 					</span>
 				</Link>
 			</Grid>
@@ -63,7 +64,7 @@ export const ProfileNavButtons = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}>
-					<span className=''>
+					<span className='' style={{ textTransform: 'uppercase' }}>
 						<WorkHistoryOutlinedIcon
 							sx={{
 								width: { xs: '32px', md: '55px' },
@@ -71,7 +72,7 @@ export const ProfileNavButtons = () => {
 								marginRight: 1,
 							}}
 						/>
-						EXPERIENCIA
+						Experience
 					</span>
 				</Link>
 			</Grid>
@@ -83,7 +84,7 @@ export const ProfileNavButtons = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}>
-					<span className=''>
+					<span className='' style={{ textTransform: 'uppercase' }}>
 						<ContactMailIcon
 							sx={{
 								width: { xs: '32px', md: '55px' },
@@ -91,7 +92,7 @@ export const ProfileNavButtons = () => {
 								marginRight: 1,
 							}}
 						/>
-						CONTACTO
+						Contact
 					</span>
 				</Link>
 			</Grid>

@@ -69,17 +69,13 @@ const Home: NextPage<Props> = ({
 								smooth={true}
 								offset={-70}
 								duration={500}
-								// onSetActive={(event) => {
-								// 	setScreenPosition({ position: event });
-								// }}
 								style={{
 									display: 'flex',
 									alignItems: 'center',
 									justifyContent: 'center',
-									// border: 'solid 1px white',
 								}}>
 								<TopNavMenuOption
-									name={'Inicio'}
+									name={'Home'}
 									icon={
 										<HomeOutlinedIcon sx={{ fontSize: { sx: 12, md: 35 } }} />
 									}
@@ -94,13 +90,9 @@ const Home: NextPage<Props> = ({
 								spy={true}
 								smooth={true}
 								offset={-70}
-								duration={500}
-								// onSetActive={(event) => {
-								// 	setScreenPosition({ position: event });
-								// }}
-							>
+								duration={500}>
 								<TopNavMenuOption
-									name={'Skills'}
+									name={'Technologies'}
 									icon={
 										<PsychologyOutlinedIcon
 											sx={{ fontSize: { sx: 12, md: 35 } }}
@@ -117,13 +109,9 @@ const Home: NextPage<Props> = ({
 								spy={true}
 								smooth={true}
 								offset={-70}
-								duration={500}
-								// onSetActive={(event) => {
-								// 	setScreenPosition({ position: event });
-								// }}
-							>
+								duration={500}>
 								<TopNavMenuOption
-									name={'Portafolio'}
+									name={'Portfolio'}
 									icon={
 										<FolderOpenOutlinedIcon
 											sx={{ fontSize: { sx: 12, md: 35 } }}
@@ -140,19 +128,9 @@ const Home: NextPage<Props> = ({
 								spy={true}
 								smooth={true}
 								offset={-70}
-								duration={500}
-								// onSetActive={(event) => {
-								// 	setScreenPosition({ position: event });
-								// }}
-								// style={{
-								// 	display: 'flex',
-								// 	alignItems: 'center',
-								// 	justifyContent: 'center',
-
-								// }}
-							>
+								duration={500}>
 								<TopNavMenuOption
-									name={'Perfil'}
+									name={'Experience'}
 									icon={
 										<WorkHistoryOutlinedIcon
 											sx={{ fontSize: { sx: 12, md: 35 } }}
@@ -169,13 +147,9 @@ const Home: NextPage<Props> = ({
 								spy={true}
 								smooth={true}
 								offset={-70}
-								duration={500}
-								// onSetActive={(event) => {
-								// 	setScreenPosition({ position: event });
-								// }}
-							>
+								duration={500}>
 								<TopNavMenuOption
-									name={'Contacto'}
+									name={'Contact'}
 									icon={
 										<ContactMailIcon sx={{ fontSize: { sx: 12, md: 35 } }} />
 									}
@@ -192,12 +166,10 @@ const Home: NextPage<Props> = ({
 				<article id='work' className='wrapper style3'>
 					<SectionBox
 						backgroundColor='#CFF1EF'
-						title={'Tecnologías'}
-						subtitle={
-							'Librerías, frameworks y herramientas que he utilizado...'
-						}
+						title={'Technologies'}
+						subtitle={'Libraries, frameworks, and tools that I have used...'}
 						nextSectionName={'portfolio'}
-						nextSectionButtonLabel={'Mi Portafolio...'}
+						nextSectionButtonLabel={'My Portfolio...'}
 						icon={<BuildIcon />}
 						sectionName={'work'}
 						prevSectionName={'top'}
@@ -209,10 +181,10 @@ const Home: NextPage<Props> = ({
 				<article id='portfolio' className='wrapper style3'>
 					<SectionBox
 						backgroundColor='#FBCFFC'
-						title={'Portafolio'}
-						subtitle={'Algunos proyectos de ejemplo'}
+						title={'Portfolio'}
+						subtitle={'Some example projects'}
 						nextSectionName={'bio'}
-						nextSectionButtonLabel={'Quien soy...'}
+						nextSectionButtonLabel={'Who I am...'}
 						icon={<WorkIcon />}
 						sectionName={'portfolio'}
 						prevSectionName={'work'}
@@ -225,10 +197,10 @@ const Home: NextPage<Props> = ({
 				<article id='bio' className='wrapper style3'>
 					<SectionBox
 						backgroundColor='#CFF1EF'
-						title={'Más sobre mi'}
-						subtitle={'Mi historial profesional e intereses'}
+						title={'More about me'}
+						subtitle={'My professional background and interests'}
 						nextSectionName={'contact'}
-						nextSectionButtonLabel={'Contectémonos...'}
+						nextSectionButtonLabel={"Let's connect..."}
 						icon={<SchoolIcon />}
 						sectionName={'bio'}
 						prevSectionName={'portfolio'}
@@ -248,7 +220,7 @@ const Home: NextPage<Props> = ({
 					</SectionBox>
 				</article>
 
-				{/* 
+				{/*
 			<article id="work" className="wrapper style2">
 				<Skills skills={skills} softSkills={ softSkills }/>
 			</article> */}
@@ -256,8 +228,8 @@ const Home: NextPage<Props> = ({
 				<article id='contact' className='wrapper style4'>
 					<div className='container medium'>
 						<header>
-							<h2>Contacto</h2>
-							<p>¿Consultas? Conversemos...</p>
+							<h2>Contact</h2>
+							<p>Have questions? Let's chat...</p>
 						</header>
 						<div className='row'>
 							{/* Contact */}
@@ -268,7 +240,7 @@ const Home: NextPage<Props> = ({
 
 						<footer>
 							<p className='footer_copyright'>
-								Sitio web creado por &copy; Francisco Zelada
+								Website created by &copy; Francisco Zelada
 							</p>
 						</footer>
 					</div>

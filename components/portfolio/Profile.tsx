@@ -110,7 +110,7 @@ const Profile: FC = () => {
 											},
 										}}>
 										<Typography sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
-											🎓Ingeniero en informática
+											🎓IT Engineer
 										</Typography>
 									</Box>
 								</Box>

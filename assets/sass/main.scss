@@ -763,6 +763,7 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 		padding: 1em 0 1em 0;
 		text-align: center;
 		min-height: 100vh;
+		margin-bottom: 0px;
 
 		&.style1 {
 			background: linear-gradient(to bottom, transparent, rgba(30, 0, 77, 0.55)) rgba(10, 0, 26, 0.85) !important;
@@ -792,10 +793,11 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 			background-color: #303030;
 			color: #999;
 			text-shadow: -1px -1px 0px #181818;
-			min-height: 95vh;
+			min-height: 100vh;
 			h1, h2, h3, h4, h5, h6 {
 				color: #fff;
 			}
+			margin-top: 0px;
 
 			form {
 				input[type=text],

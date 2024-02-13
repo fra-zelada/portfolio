@@ -74,7 +74,7 @@ const Contact: FC = () => {
 								name='name'
 								id='name'
 								fullWidth
-								placeholder='Nombre'
+								placeholder='Name'
 								value={formik.values.name}
 								onChange={formik.handleChange}
 								error={formik.touched.name && Boolean(formik.errors.name)}
@@ -104,7 +104,7 @@ const Contact: FC = () => {
 								name='subject'
 								id='subject'
 								fullWidth
-								placeholder='Asunto'
+								placeholder='Subject'
 								value={formik.values.subject}
 								onChange={formik.handleChange}
 								error={formik.touched.subject && Boolean(formik.errors.subject)}
@@ -123,7 +123,7 @@ const Contact: FC = () => {
 								// variant="standard"
 								// style={{ multilin }}
 								id='message'
-								placeholder='Mensaje'
+								placeholder='Message'
 								value={formik.values.message}
 								onChange={formik.handleChange}
 								error={formik.touched.message && Boolean(formik.errors.message)}
@@ -143,7 +143,7 @@ const Contact: FC = () => {
 										// }}
 										variant='contained'
 										style={{ margin: 1, padding: 20 }}>
-										Enviar <MailOutlineIcon />
+										Send <MailOutlineIcon sx={{ ml: '10px' }} />
 									</Button>
 									{/* <input
 										type='submit'
@@ -158,7 +158,7 @@ const Contact: FC = () => {
 										}}
 										variant='text'
 										style={{ margin: 1, padding: 20 }}>
-										Limpiar <CleaningServicesIcon />
+										Clean <CleaningServicesIcon sx={{ ml: '10px' }} />
 									</Button>
 								</li>
 							</ul>

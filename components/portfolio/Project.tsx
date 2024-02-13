@@ -57,6 +57,9 @@ const Project: FC<Props> = ({ project }) => {
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'stretch',
+				borderTopLeftRadius: '10px',
+				borderTopRightRadius: '10px',
+				marginBottom: '5px',
 			}}
 			sx={{
 				maxWidth: { xs: '100%', md: '50%', lg: '33%' },
@@ -64,12 +67,13 @@ const Project: FC<Props> = ({ project }) => {
 			}}
 			ref={divRef}>
 			<article
-				className='box style2'
+				className='box '
 				id={title}
 				style={{
 					display: 'flex',
 					alignItems: 'stretch',
-
+					borderTopLeftRadius: '10px',
+					borderTopRightRadius: '10px',
 					justifyContent: 'center',
 					flexGrow: 1,
 				}}>
@@ -90,7 +94,12 @@ const Project: FC<Props> = ({ project }) => {
 						alt={title}
 						image={image}
 						loading='lazy'
-						style={{ aspectRatio: '16/12', objectFit: 'contain' }}
+						style={{
+							aspectRatio: '16/12',
+							objectFit: 'contain',
+							borderTopLeftRadius: '10px',
+							borderTopRightRadius: '10px',
+						}}
 					/>
 
 					<CardContent>
@@ -113,7 +122,7 @@ const Project: FC<Props> = ({ project }) => {
 						<CardActions>
 							{(credentials?.length ?? 0) > 0 ? (
 								<Chip
-									label={`Visitar`}
+									label={`Visit`}
 									sx={{ color: 'white', fontWeight: 'bold' }}
 									icon={<LaunchIcon sx={{ fill: 'white' }} />}
 									component='a'
@@ -123,7 +132,7 @@ const Project: FC<Props> = ({ project }) => {
 								/>
 							) : (
 								<Chip
-									label={`Visitar`}
+									label={`Visit`}
 									sx={{ color: 'white', fontWeight: 'bold' }}
 									icon={<LaunchIcon sx={{ fill: 'white' }} />}
 									component='a'

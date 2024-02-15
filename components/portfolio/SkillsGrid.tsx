@@ -42,7 +42,8 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 					<Box
 						sx={{
 							gridArea: 'centro',
-						}}>
+						}}
+						className=''>
 						<Skill
 							title={softSkills[0].title}
 							description={softSkills[0].description}
@@ -52,14 +53,17 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 						sx={{
 							gridArea: 'izquierda',
 							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
-						}}>
+						}}
+						className='tilt-in-fwd-tl'>
 						<SkillTech2 skills={frontSkills} title={'Tech Stack'} />
 					</Box>
 					<Box
 						sx={{
 							gridArea: 'derecha',
+
 							maxWidth: { xs: '100%', sm: '100%', md: '400px' },
-						}}>
+						}}
+						className='tilt-in-fwd-tr'>
 						<SkillTech2 skills={othersSkills} title={'Tools'} />
 					</Box>
 				</Box>

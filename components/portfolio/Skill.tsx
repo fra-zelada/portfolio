@@ -20,7 +20,7 @@ interface Props {
 const Skill: FC<Props> = ({ title, description, image = '' }) => {
 	return (
 		<>
-			<Box className='skill_card'>
+			<Box className='skill_card swing-in-top-fwd'>
 				<Box className='skill_tools'>
 					<Box className='skill_circle'>
 						<span className='skill_red skill_box'></span>
@@ -49,10 +49,9 @@ const Skill: FC<Props> = ({ title, description, image = '' }) => {
 				</ListItem>
 				<Divider />
 
-				<Box className='skill_card__content'>
+				<Box className='skill_card__content '>
 					<Typography
 						variant='body2'
-						// color='text.secondary'
 						style={{ marginTop: '25px', padding: 2.5 }}>
 						{description}
 					</Typography>

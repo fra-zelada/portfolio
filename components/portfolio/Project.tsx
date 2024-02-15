@@ -65,6 +65,7 @@ const Project: FC<Props> = ({ project }) => {
 				maxWidth: { xs: '100%', md: '50%', lg: '33%' },
 				padding: { md: '2px', lg: '4px' },
 			}}
+			className='swing-in-top-fwd-projects'
 			ref={divRef}>
 			<article
 				className='box '

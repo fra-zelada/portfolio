@@ -10,7 +10,7 @@ export const ProfileNavButtons = () => {
 		<Grid container spacing={5} sx={{ marginTop: 4, marginLeft: 1 }}>
 			<Grid xs={12} lg={6} sx={{ padding: { xs: 0, lg: 1 } }}>
 				<Link
-					className='custom-button'
+					className='custom-button profile-nav-btn'
 					to='portfolio'
 					spy={true}
 					smooth={true}
@@ -38,7 +38,7 @@ export const ProfileNavButtons = () => {
 			</Grid>
 			<Grid xs={12} lg={6} sx={{ padding: { xs: 0, lg: 1 } }}>
 				<Link
-					className='custom-button'
+					className='custom-button profile-nav-btn'
 					to='work'
 					spy={true}
 					smooth={true}
@@ -58,7 +58,7 @@ export const ProfileNavButtons = () => {
 			</Grid>
 			<Grid xs={12} lg={6} sx={{ padding: { xs: 0, lg: 1 } }}>
 				<Link
-					className='custom-button'
+					className='custom-button profile-nav-btn'
 					to='bio'
 					spy={true}
 					smooth={true}
@@ -78,7 +78,7 @@ export const ProfileNavButtons = () => {
 			</Grid>
 			<Grid xs={12} lg={6} sx={{ padding: { xs: 0, lg: 1 } }}>
 				<Link
-					className='custom-button'
+					className='custom-button profile-nav-btn'
 					to='contact'
 					spy={true}
 					smooth={true}

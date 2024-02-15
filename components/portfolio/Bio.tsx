@@ -49,8 +49,7 @@ const Bio: FC<Props> = ({ jobs, courses, hobbies }) => {
 				// background: 'transparent',
 			}}
 			sx={{ width: { lg: '70%', md: '85%', xs: '95%' } }}
-			// className='container'
-		>
+			className='swing-in-top-fwd'>
 			<AccordionCustom
 				title={'My Work Experience'}
 				subtitle={'Places where I have worked and learned...'}

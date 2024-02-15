@@ -194,7 +194,7 @@ const Home: NextPage<Props> = ({
 					</SectionBox>
 				</article>
 
-				<article id='bio' className='wrapper style3'>
+				<article id='bio' className='wrapper style3 '>
 					<SectionBox
 						backgroundColor='#CFF1EF'
 						title={'More about me'}
@@ -225,7 +225,7 @@ const Home: NextPage<Props> = ({
 				<Skills skills={skills} softSkills={ softSkills }/>
 			</article> */}
 
-				<article id='contact' className='wrapper style4'>
+				<article id='contact' className='wrapper style4 '>
 					<div className='container medium'>
 						<header>
 							<h2>Contact</h2>

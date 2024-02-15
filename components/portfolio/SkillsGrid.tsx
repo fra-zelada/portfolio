@@ -15,7 +15,7 @@ const SkillsGrid: FC<Props> = ({ skills, softSkills }) => {
 
 	return (
 		<>
-			<div className='container'>
+			<div className='container slide-out-fwd-center'>
 				<Box
 					sx={{
 						display: 'grid',

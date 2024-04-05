@@ -4,208 +4,215 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@include breakpoints((
-    xlarge:  ( 1281px,  1680px ),
-    large:   ( 981px,   1280px ),
-    medium:  ( 737px,   980px  ),
-    small:   ( null,    736px  )
-));
+@include breakpoints(
+	(
+		xlarge: (
+			1281px,
+			1680px,
+		),
+		large: (
+			981px,
+			1280px,
+		),
+		medium: (
+			737px,
+			980px,
+		),
+		small: (
+			null,
+			736px,
+		),
+	)
+);
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    .elementGrid{
-        padding: 3px;
-    }
-    .elementSkill {
-        padding: 3px;
-    }
-    .elementSkill:hover {
-        background-color: rgba(0,100,255,.5);
-        mix-blend-mode: hard-light;
-    }
-
-
-    .card__container {
-      width: 99%;
-      margin: 0 auto;
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      grid-template-areas:
-      ".      card1  .      "
-      "card2  card1   card3"
-      "card2  card4   card3"
-      ".      card4   .";
-  }
-
-  .card__item {
-      padding: 20px;
-      background: #fff;
-      border-top: 5px solid #667eea;
-      box-shadow: 0 0 3px rgba(0, 0, 0, .5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 33%;
-  }
-
-  .card__item:nth-of-type(1) {
-      grid-area: card1;
-
-
-  }
-
-  .card__item:nth-of-type(2) {
-      grid-area: card2;
-      border: #fff 10px solid;
-
-  }
-
-  .card__item:nth-of-type(3) {
-      grid-area: card3;
-
-
-  }
-
-  .card__item:nth-of-type(4) {
-      grid-area: card4;
-  }
-.card__container_techs{
-    width: 99%;
-    margin: 0 auto;
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    gap: 3px;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+.elementGrid {
+	padding: 3px;
+}
+.elementSkill {
+	padding: 3px;
+}
+.elementSkill:hover {
+	background-color: rgba(0, 100, 255, 0.5);
+	mix-blend-mode: hard-light;
 }
 
-.grid__modal{
-    width: 99%;
-    margin: 0 auto;
-    margin-top: 5px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1,1fr);
-    gap: 20px;
-    grid-template-areas:
-    "card1      card2"
+.card__container {
+	width: 99%;
+	margin: 0 auto;
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	grid-template-areas:
+		'.      card1  .      '
+		'card2  card1   card3'
+		'card2  card4   card3'
+		'.      card4   .';
 }
-.grid__modal__item:nth-of-type(1){
-    grid-area: card1;
+
+.card__item {
+	padding: 20px;
+	background: #fff;
+	border-top: 5px solid #667eea;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 33%;
 }
-.grid__modal__item:nth-of-type(2){
-    grid-area: card2;
+
+.card__item:nth-of-type(1) {
+	grid-area: card1;
+}
+
+.card__item:nth-of-type(2) {
+	grid-area: card2;
+	border: #fff 10px solid;
+}
+
+.card__item:nth-of-type(3) {
+	grid-area: card3;
+}
+
+.card__item:nth-of-type(4) {
+	grid-area: card4;
+}
+.card__container_techs {
+	width: 99%;
+	margin: 0 auto;
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 3px;
+}
+
+.grid__modal {
+	width: 99%;
+	margin: 0 auto;
+	margin-top: 5px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	gap: 20px;
+	grid-template-areas: 'card1      card2';
+}
+.grid__modal__item:nth-of-type(1) {
+	grid-area: card1;
+}
+.grid__modal__item:nth-of-type(2) {
+	grid-area: card2;
 }
 @include breakpoint('<=small') {
-    .card__container {
-        grid-template-areas:
-            "card1"
-            "card2"
-            "card3";
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3,1fr);
-        }
+	.card__container {
+		grid-template-areas:
+			'card1'
+			'card2'
+			'card3';
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
 }
 @include breakpoint('<=medium') {
-    .card__container {
-        grid-template-areas:
-            "card1"
-            "card2"
-            "card3";
+	.card__container {
+		grid-template-areas:
+			'card1'
+			'card2'
+			'card3';
 
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3,1fr);
-        }
-    .parent {
-        display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+	.parent {
+		display: grid;
 
-        grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        }
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+	}
 }
 @include breakpoint('<=large') {
-    .card__container {
-        grid-template-areas:
-            "card1 card1"
-            "card2 card3";
+	.card__container {
+		grid-template-areas:
+			'card1 card1'
+			'card2 card3';
 
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1,1fr);
-        }
-    .parent {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+	}
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        }
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+	}
 }
 
 .skillBox {
+	background-color: rgba(250, 247, 240, 0.05);
 
-    background-color: rgba(250, 247, 240, 0.05);
+	border: 1px solid rgba(128, 128, 128, 0.15);
+	border-radius: 3%;
 
-    border: 1px solid rgba(128, 128, 128, 0.15);
-    border-radius: 3%;
-
-    transition: background-color 0.3s ease-out , color 0.3s ease-out, border 0.3s ease-out;
-    place-items: center;
-  }
-
-  .skillBox:hover {
-    background-color: rgba(205, 252, 246, 0.25);
-    color:#000;
-    border: 1px solid rgba(128, 128, 128, 0.50);
-
-  }
-
-  .skillContainer {
-    // background-color: #F8FBFE;
-  }
-
-  a, u {
-    text-decoration: none;
-  }
-
-  .footer_copyright{
-    padding-top: 30px;
-    border-top: 2px solid #918484;
-    text-align: center;
+	transition: background-color 0.3s ease-out, color 0.3s ease-out,
+		border 0.3s ease-out;
+	place-items: center;
 }
 
-.footer_copyright::after{
-    content: " : fra.zelada.s@gmail.com";
+.skillBox:hover {
+	background-color: rgba(205, 252, 246, 0.25);
+	color: #000;
+	border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
-.titleBox{
-    text-shadow: 3px 3px 0px rgb(0, 0, 0) !important;
+.skillContainer {
+	// background-color: #F8FBFE;
+}
+
+a,
+u {
+	text-decoration: none;
+}
+
+.footer_copyright {
+	padding-top: 30px;
+	border-top: 2px solid #918484;
+	text-align: center;
+}
+
+.footer_copyright::after {
+	content: ' : fra.zelada.s@gmail.com';
+}
+
+.titleBox {
+	text-shadow: 3px 3px 0px rgb(0, 0, 0) !important;
 }
 
 .clickable:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .fade-in {
 	animation: fadeIn 0.8s;
-  	opacity: 1;
+	opacity: 1;
 }
 
 @keyframes fadeIn {
-  from {
-  	opacity: 0;
-  }
-  to {
- 	opacity: 1;
-  }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .flip {
@@ -226,7 +233,7 @@
 		animation-timing-function: ease-in;
 	}
 	80% {
-		transform: perspective(400px) rotateY(360deg) scale(.95);
+		transform: perspective(400px) rotateY(360deg) scale(0.95);
 		animation-timing-function: ease-in;
 	}
 	100% {
@@ -236,83 +243,82 @@
 }
 
 .fade-in-down {
-    animation: fade-in-down 2.5s ease ;
-  }
-  @keyframes fade-in-down {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+	animation: fade-in-down 2.5s ease;
+}
+@keyframes fade-in-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 
-  .fade-in-left {
-    animation: fade-in-left 2s ease ;
-  }
-  @keyframes fade-in-left {
-    0% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+.fade-in-left {
+	animation: fade-in-left 2s ease;
+}
+@keyframes fade-in-left {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 
-  .skill_card {
-    // width: 190px;
-    // height: 254px;
-    margin: 0 auto;
+.skill_card {
+	// width: 190px;
+	// height: 254px;
+	margin: 0 auto;
 
 	background-color: rgb(234 234 234 /10%) !important;
 
-    border-radius: 8px;
-    z-index: 1;
-   }
+	border-radius: 8px;
+	z-index: 1;
+}
 
-   .skill_tools {
-    display: flex;
-    align-items: flex-start;
-    padding: 9px;
-   }
+.skill_tools {
+	display: flex;
+	align-items: flex-start;
+	padding: 9px;
+}
 
-   .skill_circle {
-    padding: 0 4px;
-   }
+.skill_circle {
+	padding: 0 4px;
+}
 
-   .skill_box {
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    width: 10px;
-    height: 10px;
-    padding: 1px;
-    border-radius: 50%;
-   }
+.skill_box {
+	position: absolute;
+	display: flex;
+	align-items: flex-start;
+	width: 10px;
+	height: 10px;
+	padding: 1px;
+	border-radius: 50%;
+}
 
-   .skill_red {
-    position: relative;
-    background-color: #ff605c;
-   }
+.skill_red {
+	position: relative;
+	background-color: #ff605c;
+}
 
-   .skill_yellow {
-    position: relative;
-    background-color: #ffbd44;
-   }
+.skill_yellow {
+	position: relative;
+	background-color: #ffbd44;
+}
 
-   .skill_green {
-    position: relative;
+.skill_green {
+	position: relative;
 
-    background-color: #00ca4e;
-   }
-   .skill_card__content {
-    padding: 20;
-   }
-
+	background-color: #00ca4e;
+}
+.skill_card__content {
+	padding: 20;
+}
 
 //   a:hover {
 //     cursor: pointer;
@@ -327,7 +333,6 @@
 
 // // The amount of columns
 // --columns: 3;
-
 
 // // This is the calculation for the row height.
 // --row-size: calc(
@@ -348,328 +353,338 @@
 // }
 
 .custom-button {
-    align-items: center;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-    border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 3px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all .3s;
+	align-items: center;
+	background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+	border: 0;
+	border-radius: 8px;
+	box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+	box-sizing: border-box;
+	color: #ffffff;
+	display: flex;
+	font-family: Phantomsans, sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	justify-content: center;
+	line-height: 1em;
+	max-width: 100%;
+	min-width: 140px;
+	padding: 3px;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: all 0.3s;
+}
 
-   }
+.custom-button:active,
+.custom-button:hover {
+	outline: 0;
+}
 
-   .custom-button:active,
-   .custom-button:hover {
-    outline: 0;
-   }
+.custom-button span {
+	background-color: rgb(5, 6, 45);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 
-   .custom-button span {
-    background-color: rgb(5, 6, 45);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	transition: 300ms;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	text-align: center;
+}
 
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-    padding-top:  18px;
-    padding-bottom:  18px;
-    text-align: center;
-   }
+.custom-button:hover span {
+	background: none;
+}
 
-   .custom-button:hover span {
-    background: none;
-   }
-
-   .custom-button:active {
-    transform: scale(0.9);
-   }
-
+.custom-button:active {
+	transform: scale(0.9);
+}
 
 //    Github button
 
 .github-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 15px;
-    background-color: #181717;
-    outline: 3px #181717 solid;
-    outline-offset: -3px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: 400ms;
-    width: 100%;
-  }
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	gap: 15px;
+	background-color: #181717;
+	outline: 3px #181717 solid;
+	outline-offset: -3px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: 400ms;
+	width: 100%;
+}
 
-  .github-button .text {
-    color: white;
-    font-weight: 700;
-    font-size: 1em;
-    transition: 400ms;
-  }
+.github-button .text {
+	color: white;
+	font-weight: 700;
+	font-size: 1em;
+	transition: 400ms;
+}
 
-  .github-button svg path {
-    transition: 400ms;
-  }
+.github-button svg path {
+	transition: 400ms;
+}
 
-  .github-button:hover {
-    background-color: white;
-  }
+.github-button:hover {
+	background-color: white;
+}
 
-  .github-button:hover .text {
-    color: #181717;
-  }
+.github-button:hover .text {
+	color: #181717;
+}
 
-  .github-button:hover svg path {
-    fill: #181717;
-  }
+.github-button:hover svg path {
+	fill: #181717;
+}
 
+@include breakpoint('>=large') {
+	.swing-in-top-fwd {
+		-webkit-animation: swing-in-top-fwd 4s
+			cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+		animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+		animation-timeline: view();
+		// animation-range: entry 50% cover 50%;
 
-  .swing-in-top-fwd {
-    -webkit-animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-            animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-            animation-timeline: view();
-          // animation-range: entry 50% cover 50%;
+		// animation-range: entry 50% entry 100%;
+		animation-range: 10% 100%;
+	}
+	.swing-in-top-fwd-projects {
+		-webkit-animation: swing-in-top-fwd 4s
+			cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+		animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+		animation-timeline: view();
+		// animation-range: entry 50% cover 50%;
 
-          // animation-range: entry 50% entry 100%;
-          animation-range:  10%  100%;
-
-  }
-  .swing-in-top-fwd-projects {
-    -webkit-animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-            animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-            animation-timeline: view();
-          // animation-range: entry 50% cover 50%;
-
-          // animation-range: entry 50% entry 100%;
-          animation-range:  7%  100%;
-
-  }
-  /* ----------------------------------------------
+		// animation-range: entry 50% entry 100%;
+		animation-range: 7% 100%;
+	}
+	/* ----------------------------------------------
  * Generated by Animista on 2024-2-15 15:4:56
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
+	/**
  * ----------------------------------------
  * animation swing-in-top-fwd
  * ----------------------------------------
  */
-@-webkit-keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
-@keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
+	@-webkit-keyframes swing-in-top-fwd {
+		0% {
+			-webkit-transform: rotateX(-100deg);
+			transform: rotateX(-100deg);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateX(0deg);
+			transform: rotateX(0deg);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+			opacity: 1;
+		}
+	}
+	@keyframes swing-in-top-fwd {
+		0% {
+			-webkit-transform: rotateX(-100deg);
+			transform: rotateX(-100deg);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateX(0deg);
+			transform: rotateX(0deg);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+			opacity: 1;
+		}
+	}
 
+	.tilt-in-fwd-tr {
+		-webkit-animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+			both;
+		animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+		animation-timeline: view();
+		animation-range: 00% 30%;
+	}
 
-.tilt-in-fwd-tr {
-	-webkit-animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          animation-timeline: view();
-          animation-range: 00% 30%;
-}
-
-/* ----------------------------------------------
+	/* ----------------------------------------------
  * Generated by Animista on 2024-2-15 15:7:32
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
+	/**
  * ----------------------------------------
  * animation tilt-in-fwd-tr
  * ----------------------------------------
  */
- @-webkit-keyframes tilt-in-fwd-tr {
-  0% {
-    -webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
-            transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-    opacity: 1;
-  }
-}
-@keyframes tilt-in-fwd-tr {
-  0% {
-    -webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
-            transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-    opacity: 1;
-  }
-}
+	@-webkit-keyframes tilt-in-fwd-tr {
+		0% {
+			-webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px)
+				skew(-35deg, 10deg);
+			transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px)
+				skew(-35deg, 10deg);
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0)
+				skew(0deg, 0deg);
+			transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+			opacity: 1;
+		}
+	}
+	@keyframes tilt-in-fwd-tr {
+		0% {
+			-webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px)
+				skew(-35deg, 10deg);
+			transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px)
+				skew(-35deg, 10deg);
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0)
+				skew(0deg, 0deg);
+			transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+			opacity: 1;
+		}
+	}
 
-.tilt-in-fwd-tl {
-	-webkit-animation: tilt-in-fwd-tl 3.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: tilt-in-fwd-tl 3.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          animation-timeline: view();
-          animation-range: 00% 30%;
+	.tilt-in-fwd-tl {
+		-webkit-animation: tilt-in-fwd-tl 3.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+			both;
+		animation: tilt-in-fwd-tl 3.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+		animation-timeline: view();
+		animation-range: 00% 30%;
+	}
 
-}
-
-/* ----------------------------------------------
+	/* ----------------------------------------------
  * Generated by Animista on 2024-2-15 15:9:46
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
+	/**
  * ----------------------------------------
  * animation tilt-in-fwd-tl
  * ----------------------------------------
  */
- @-webkit-keyframes tilt-in-fwd-tl {
-  0% {
-    -webkit-transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
-            transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-    opacity: 1;
-  }
-}
-@keyframes tilt-in-fwd-tl {
-  0% {
-    -webkit-transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
-            transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
-    opacity: 1;
-  }
-}
+	@-webkit-keyframes tilt-in-fwd-tl {
+		0% {
+			-webkit-transform: rotateY(-20deg) rotateX(35deg)
+				translate(-300px, -300px) skew(35deg, -10deg);
+			transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px)
+				skew(35deg, -10deg);
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0)
+				skew(0deg, 0deg);
+			transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+			opacity: 1;
+		}
+	}
+	@keyframes tilt-in-fwd-tl {
+		0% {
+			-webkit-transform: rotateY(-20deg) rotateX(35deg)
+				translate(-300px, -300px) skew(35deg, -10deg);
+			transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px)
+				skew(35deg, -10deg);
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0)
+				skew(0deg, 0deg);
+			transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+			opacity: 1;
+		}
+	}
 
+	.profile-nav-btn:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 20px 20px 0 rgba(9, 0, 131, 0.5);
+	}
 
-.profile-nav-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 20px 0 rgba(9, 0, 131, 0.5);
-}
+	.profile-nav-btn {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
 
-.profile-nav-btn {
+	.slide-out-fwd-center {
+		-webkit-animation: slide-out-blurred-bottom 0.45s
+			cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+		animation: slide-out-blurred-bottom 0.45s
+			cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+		animation-timeline: view();
+		animation-range: 70% 100%;
+	}
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.slide-out-fwd-center {
-  -webkit-animation: slide-out-blurred-bottom 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-  animation: slide-out-blurred-bottom 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-          animation-timeline: view();
-          animation-range:70% 100%;
-}
-
-
-/* ----------------------------------------------
+	/* ----------------------------------------------
  * Generated by Animista on 2024-2-15 16:24:50
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
+	/**
  * ----------------------------------------
  * animation slide-out-blurred-bottom
  * ----------------------------------------
  */
- @-webkit-keyframes slide-out-blurred-bottom {
-  0% {
-    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
-            transform: translateY(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(1000px) scaleY(2) scaleX(0.2);
-            transform: translateY(1000px) scaleY(2) scaleX(0.2);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
-    opacity: 0;
-  }
-}
-@keyframes slide-out-blurred-bottom {
-  0% {
-    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
-            transform: translateY(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(1000px) scaleY(2) scaleX(0.2);
-            transform: translateY(1000px) scaleY(2) scaleX(0.2);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
-    opacity: 0;
-  }
+	@-webkit-keyframes slide-out-blurred-bottom {
+		0% {
+			-webkit-transform: translateY(0) scaleY(1) scaleX(1);
+			transform: translateY(0) scaleY(1) scaleX(1);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+		100% {
+			-webkit-transform: translateY(1000px) scaleY(2) scaleX(0.2);
+			transform: translateY(1000px) scaleY(2) scaleX(0.2);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+			-webkit-filter: blur(40px);
+			filter: blur(40px);
+			opacity: 0;
+		}
+	}
+	@keyframes slide-out-blurred-bottom {
+		0% {
+			-webkit-transform: translateY(0) scaleY(1) scaleX(1);
+			transform: translateY(0) scaleY(1) scaleX(1);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+		100% {
+			-webkit-transform: translateY(1000px) scaleY(2) scaleX(0.2);
+			transform: translateY(1000px) scaleY(2) scaleX(0.2);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+			-webkit-filter: blur(40px);
+			filter: blur(40px);
+			opacity: 0;
+		}
+	}
 }

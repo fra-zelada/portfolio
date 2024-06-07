@@ -34,7 +34,7 @@ export const ProfileSkillsContainer = () => {
 			/>
 			<Box
 				sx={{
-					display: { xs: 'none', lg: 'flex' },
+					display: 'flex',
 					flexDirection: 'row',
 					justifyContent: 'center',
 					alignItems: 'center',

@@ -101,6 +101,7 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 							stroke: 'black',
 							strokeWidth: '2',
 							color: '#ffffff',
+							textShadow: '1px 1px 8px rgba(0, 0, 0, 1.0)',
 						}}>
 						{icon}
 						{` ${title}`}
@@ -109,7 +110,12 @@ const SectionBox: FC<PropsWithChildren<Props>> = ({
 				<Typography
 					variant='h6'
 					color={'white'}
-					style={{ stroke: 'black', strokeWidth: '10', fontWeight: 'bold' }}>
+					style={{
+						stroke: 'black',
+						strokeWidth: '10',
+						fontWeight: 'bold',
+						textShadow: '1px 1px 8px rgba(0, 0, 0, 1.0)',
+					}}>
 					{subtitle}
 				</Typography>
 			</Box>

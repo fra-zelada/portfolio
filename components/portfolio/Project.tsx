@@ -111,9 +111,14 @@ const Project: FC<Props> = ({ project }) => {
 							}}>
 							<Typography
 								gutterBottom
-								variant='h5'
+								// variant='h5'
 								component='div'
-								color={'white'}>
+								color={'white'}
+								style={{
+									fontWeight: 'bold',
+									fontSize: '28px',
+									textTransform: 'uppercase',
+								}}>
 								{title}
 							</Typography>
 							<ReadMore text={description} divRef={divRef} />
@@ -123,8 +128,15 @@ const Project: FC<Props> = ({ project }) => {
 						<CardActions>
 							{(credentials?.length ?? 0) > 0 ? (
 								<Chip
-									label={`Visit`}
-									sx={{ color: 'white', fontWeight: 'bold' }}
+									label={`Live Demo`}
+									sx={{
+										color: 'white',
+										bgcolor: 'blueviolet',
+										border: '2px solid blueviolet',
+										fontWeight: 'bolder',
+										fontSize: '16px',
+										paddingX: '6px',
+									}}
 									icon={<LaunchIcon sx={{ fill: 'white' }} />}
 									component='a'
 									onClick={openLink}
@@ -133,8 +145,16 @@ const Project: FC<Props> = ({ project }) => {
 								/>
 							) : (
 								<Chip
-									label={`Visit`}
-									sx={{ color: 'white', fontWeight: 'bold' }}
+									label={`Live Demo`}
+									sx={{
+										color: 'white',
+										bgcolor: 'blueviolet',
+										border: '2px solid blueviolet',
+
+										fontWeight: 'bolder',
+										fontSize: '16px',
+										paddingX: '6px',
+									}}
 									icon={<LaunchIcon sx={{ fill: 'white' }} />}
 									component='a'
 									href={website}
@@ -146,7 +166,12 @@ const Project: FC<Props> = ({ project }) => {
 
 							<Chip
 								label='Github'
-								sx={{ color: 'white', fontWeight: 'bold' }}
+								sx={{
+									color: 'white',
+									fontWeight: 'bolder',
+									fontSize: '16px',
+									paddingX: '6px',
+								}}
 								icon={<GitHubIcon sx={{ fill: 'white' }} />}
 								component='a'
 								href={gitHubRepo}

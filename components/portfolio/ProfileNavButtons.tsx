@@ -10,7 +10,7 @@ export const ProfileNavButtons = () => {
 		<Grid container spacing={5} sx={{ marginTop: 4, marginLeft: 1 }}>
 			<Grid xs={12} lg={6} sx={{ padding: { xs: 0, lg: 1 } }}>
 				<Link
-					className='custom-button profile-nav-btn'
+					className='custom-button custom-button-main profile-nav-btn'
 					to='portfolio'
 					spy={true}
 					smooth={true}

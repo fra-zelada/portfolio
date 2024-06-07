@@ -33,6 +33,8 @@ const Profile: FC = () => {
 						justifyContent: 'center',
 						alignItems: 'center',
 						gap: 5,
+						flexGrow: '1',
+						alignSelf: 'start',
 					}}>
 					<span className='image fit fade-in-down '>
 						<Image
@@ -58,14 +60,20 @@ const Profile: FC = () => {
 						<Box
 							sx={{
 								marginBottom: 0,
-								fontSize: { xs: '30px', md: '45px', whiteSpace: 'nowrap' },
-								textAlign: { xs: 'center', md: 'left' },
+								fontSize: { xs: '30px', lg: '45px', whiteSpace: 'nowrap' },
+								textAlign: { xs: 'start', lg: 'left' },
 								display: 'flex',
-								flexDirection: 'row',
-								justifyContent: 'flex-start',
-								alignItems: 'center',
+								flexDirection: { xs: 'row', lg: 'column' },
+								justifyContent: { xs: 'center', lg: 'flex-start' },
+								alignItems: { xs: 'center', lg: 'start' },
+
+								alignSelf: { xs: 'center', lg: 'start' },
 							}}>
-							<Box sx={{ display: { xs: 'flex', lg: 'none' } }}>
+							<Box
+								sx={{
+									display: { xs: 'flex', lg: 'none' },
+									alignSelf: 'start',
+								}}>
 								<picture>
 									<img
 										src={process.env.NEXT_PUBLIC_PROFILE_PIC}
@@ -75,42 +83,51 @@ const Profile: FC = () => {
 									/>
 								</picture>
 							</Box>
-							<Typography sx={{ fontWeight: 'bold', marginLeft: 0 }}>
+							<Typography
+								sx={{
+									fontWeight: 'bold',
+									marginLeft: 0,
+									textTransform: 'uppercase',
+								}}>
 								Francisco Zelada
 							</Typography>
 						</Box>
 						<Box
 							sx={{
 								display: 'flex',
-								flexDirection: { xs: 'column', md: 'row' },
-								justifyContent: 'center',
-								alignItems: 'center',
-								marginTop: -2,
+								flexDirection: { xs: 'column' },
+								justifyContent: { xs: 'center', lg: 'left' },
+								alignItems: { xs: 'center', lg: 'start' },
+								marginTop: { md: '-10px' },
 							}}>
 							<Box>
 								<Box
 									sx={{
 										marginBottom: 0,
 										fontSize: {
-											xs: '15px',
+											xs: '16px',
+											md: '24px',
 											whiteSpace: 'nowrap',
 										},
 									}}>
-									<Typography sx={{ fontWeight: 'bold' }}>
-										Front-End Developer
+									<Typography sx={{ fontWeight: 'bold', textTransform: '' }}>
+										Fullstack Developer - 🎓IT Engineer
 									</Typography>
 								</Box>
 								<Box
 									sx={{
 										marginBottom: 0,
 										fontSize: {
-											xs: '10px',
+											xs: '24px',
+											md: '16px',
 											whiteSpace: 'nowrap',
 										},
 									}}>
-									<Typography sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
-										🎓IT Engineer
-									</Typography>
+									<Typography
+										sx={{
+											fontWeight: 'bold',
+											paddingBottom: 1,
+										}}></Typography>
 								</Box>
 							</Box>
 							{/* Profile Skills */}

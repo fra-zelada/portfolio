@@ -40,7 +40,10 @@ const ReadMore: FC<Props> = ({ text, divRef }) => {
 
 	return (
 		<div className={animate ? 'fade-in' : ''}>
-			<Typography variant='body2' color='white' style={{ textAlign: 'left' }}>
+			<Typography
+				variant='body2'
+				color='white'
+				style={{ textAlign: 'left', fontSize: '14px', lineHeight: '1.5em' }}>
 				{isReadMore ? text.slice(0, 750) : text}
 				{text.length > 750 && (
 					<a onClick={toggleReadMore} className='clickable'>

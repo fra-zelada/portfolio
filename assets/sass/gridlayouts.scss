@@ -354,7 +354,6 @@ u {
 
 .custom-button {
 	align-items: center;
-	background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 	border: 0;
 	border-radius: 8px;
 	box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -376,6 +375,10 @@ u {
 	white-space: nowrap;
 	cursor: pointer;
 	transition: all 0.3s;
+}
+
+.custom-button-main {
+	background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 
 .custom-button:active,
@@ -400,7 +403,8 @@ u {
 }
 
 .custom-button:hover span {
-	background: none;
+	background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+	// background: none;
 }
 
 .custom-button:active {

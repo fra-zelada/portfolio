@@ -39,13 +39,17 @@ const Skill: FC<Props> = ({ title, description, image = '' }) => {
 						justifyContent: 'center',
 						alignItems: 'center',
 						top: 0,
+						fontWeight: 'bold',
 					}}>
 					<ListItemAvatar>
 						<Avatar>
 							<CoPresentIcon />
 						</Avatar>
 					</ListItemAvatar>
-					<Typography variant='h4'> {title} </Typography>
+					<Typography variant='h4' style={{ fontWeight: 'bold' }}>
+						{' '}
+						{title}{' '}
+					</Typography>
 				</ListItem>
 				<Divider />
 

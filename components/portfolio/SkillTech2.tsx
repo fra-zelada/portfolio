@@ -67,6 +67,7 @@ const SkillTech2: FC<Props> = ({ skills, title }) => {
 									lg: '300px',
 									xl: '300px',
 								},
+								fontWeight: 'bold',
 							}}>
 							{' '}
 							{title}{' '}
